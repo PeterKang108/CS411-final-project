@@ -1,16 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Peter
-  Date: 2020/11/6
-  Time: 15:02
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  test
-  </body>
+<head>
+  <title>Main Page</title>
+</head>
+<body>
+<a href="${pageContext.request.contextPath}/showall.jsp">show all in database</a><br>
+<a href="${pageContext.request.contextPath}/queueid.jsp">show information of a specfic part</a><br>
+</body>
 </html>
