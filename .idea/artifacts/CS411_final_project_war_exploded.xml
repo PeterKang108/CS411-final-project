@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="CS411-final-project:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/CS411_final_project_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="CS411-final-project/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="CS411-final-project" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
