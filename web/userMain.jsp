@@ -20,12 +20,12 @@
     New to PC?
     <input type="submit" value="See some Recommendations">
 </form>
-<form name="link_form" method="post" action="userShowall">
+<form name="link_form" method="post" action="userShowall.jsp">
     Browse the parts,
     <input type="submit" value="Start on your own Build">
 </form>
 
-<a href="dbmanagePage/cards.html    ">test</a>
+<a href="dbmanagePage/cards.html">test</a>
 <!-- Footer -->
 <footer id="footer">
     <ul class="icons">
