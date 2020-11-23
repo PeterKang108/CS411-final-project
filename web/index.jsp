@@ -21,10 +21,12 @@
   <input type="email" name="UserId" id="userId" placeholder="UserId" />
   <br>
   <input type="email" name="UserPassword" id="userPw" placeholder="Password" />
-  <input type="submit" value="Sign In" />
+  <input type="submit" value="Sign Up">
 </form>
 
-
+<form name="link_form" method="post" action="userMain.jsp">
+  <input type="submit" value="Sign In">
+</form>
 <form name="link_form" method="post" action="showall.jsp">
   <input type="submit" value="show all in database">
 </form>
