@@ -1,6 +1,8 @@
 <%@ page import="entity.Parts" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="DAO.PartsDAO" %>
+<%@ page import="DAO.CPUDAO" %>
+<%@ page import="entity.CPU" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -27,27 +29,27 @@
 
     <tbody>
         <%
-            PartsDAO daoCPU = new  PartsDAO();
-            ArrayList<Parts> CPUs = daoCPU.getAllParts();
-            for (Parts CPU : CPUs) {
+            CPUDAO daoCPU = new  CPUDAO();
+            ArrayList<CPU> CPUs = daoCPU.getAllCPU();
+            for (CPU cpu : CPUs) {
         %>
         <tr>
-            <td data-label="ratings"><%=CPU.getRatings()%>
+            <td data-label="ratings"><%=cpu.getRatings()%>
             </td>
-            <td data-label="price"><%=CPU.getPrice()%>
+            <td data-label="price"><%=cpu.getPrice()%>
             </td>
-            <td data-label="brand"><%=CPU.getBrand()%>
+            <td data-label="brand"><%=cpu.getBrand()%>
             </td>
-            <td data-label="partsName"><%=CPU.getPartsName()%>
+            <td data-label="partsName"><%=cpu.getPartsName()%>
             </td>
-            <td data-label="type"><%=CPU.getType()%>
+            <td data-label="type"><%=cpu.getType()%>
             </td>
-<%--            <td data-label="Power Consumption"><%=CPU.getPower()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="Compatible Socket"><%=CPU.getSocket()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="Integrated Graphics"><%=CPU.getIntegratedGraphics()%>--%>
-<%--            </td>--%>
+            <td data-label="Power Consumption"><%=cpu.getPower_consumption()%>
+            </td>
+            <td data-label="Compatible Socket"><%=cpu.getCompatible_socket()%>
+            </td>
+            <td data-label="Integrated Graphics"><%=cpu.getIntegrated_graphics()%>
+            </td>
         </tr>
         <%
             }
