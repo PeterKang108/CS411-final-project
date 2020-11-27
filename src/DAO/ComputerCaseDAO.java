@@ -71,4 +71,54 @@ public class ComputerCaseDAO {
         }
     }
 
+    public int insertComputerCase(ComputerCase part){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+//        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "insert into Parts(partsID, ratings, price, brand, partsName, type)" +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setDouble(2, part.getRatings());
+            stmt.setDouble(3, part.getPrice());
+            stmt.setString(4, part.getBrand());
+            stmt.setString(5, part.getPartsName());
+            stmt.setString(6, part.getType());
+            stmt.executeUpdate();
+            sql = "insert into ComputerCase(partsID, Case_type, number_of_case_fans, RGB, side_panel, noise_proof)" +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setString(2, part.getCase_type());
+            stmt.setInt(3, part.getNumber_of_case_fan());
+            stmt.setString(4, part.getRGB());
+            stmt.setString(5, part.getSide_panel());
+            stmt.setString(6, part.getNoise_proof());
+            stmt.executeUpdate();
+            return 1;
+
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return 0;
+        }
+        finally {
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
+
 }
