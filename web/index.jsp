@@ -24,7 +24,10 @@
   <input type="submit" value="Sign Up">
 </form>
 
-<form name="link_form" method="post" action="userMain.jsp">
+<form name="link_form" method="post" action="LoginServlet">
+  <input type="text" name="username" id="userId" placeholder="UserId" />
+  <br>
+  <input type="text" name="password" id="userPw" placeholder="Password" />
   <input type="submit" value="Sign In">
 </form>
 <form name="link_form" method="post" action="showall.jsp">
