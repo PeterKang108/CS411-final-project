@@ -17,21 +17,26 @@
 </header>
 
 <!-- Signup Form -->
-<form id="signup-form" method="post" action="#">
-  <input type="email" name="UserId" id="userId" placeholder="UserId" />
-  <br>
-  <input type="email" name="UserPassword" id="userPw" placeholder="Password" />
-  <input type="submit" value="Sign Up">
-</form>
+<%--<form id="signup-form" method="post" action="#">--%>
+<%--  <input type="email" name="UserId" id="userId1" placeholder="UserId" />--%>
+<%--  <br>--%>
+<%--  <input type="email" name="UserPassword" id="userPw1" placeholder="Password" />--%>
+<%--  <input type="submit" value="Sign Up">--%>
+<%--</form>--%>
 
 <form name="link_form" method="post" action="LoginServlet">
   <input type="text" name="username" id="userId" placeholder="UserId" />
   <br>
   <input type="text" name="password" id="userPw" placeholder="Password" />
+  <br>
   <input type="submit" value="Sign In">
 </form>
-<form name="link_form" method="post" action="showall.jsp">
-  <input type="submit" value="show all in database">
+
+<form name="link_form" method="post" action="userMain.jsp">
+  <input type="submit" value="jump to userpage">
+</form>
+<%--<form name="link_form" method="post" action="showall.jsp">--%>
+<%--  <input type="submit" value="show all in database">--%>
 </form>
 <form name="link_form" method="post" action="queueid.jsp">
   <input type="submit" value="show information of a specfic part">

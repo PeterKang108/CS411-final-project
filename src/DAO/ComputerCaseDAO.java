@@ -35,7 +35,7 @@ public class ComputerCaseDAO {
                 part.setType(rs.getString("type"));
                 part.setCase_type(rs.getString("Case_type"));
                 part.setNoise_proof (rs.getString ("noise_proof"));
-                part.setNumber_of_case_fan (rs.getInt ("number_of_case_fan"));
+                part.setNumber_of_case_fan (rs.getInt ("number_of_case_fans"));
                 part.setRGB (rs.getString ("RGB"));
                 part.setSide_panel (rs.getString ("side_panel"));
                 list.add(part);

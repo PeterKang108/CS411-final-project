@@ -32,12 +32,11 @@ public class MotherboardDAO {
                 part.setBrand(rs.getString("brand"));
                 part.setPartsName(rs.getString("partsName"));
                 part.setType(rs.getString("type"));
-                part.setCompatiable_socket(rs.getString("compatible_socket"));
+                part.setCompatible_socket(rs.getString("compatible_socket"));
                 part.setMotherboard_type(rs.getString("Motherboard_type"));
                 part.setNumber_of_m2(rs.getInt("number_of_m.2"));
-                part.setNumber_of_PCIe_2(rs.getInt("number_of_PCIe_2.0"));
-                part.setNumber_of_PCIe_3(rs.getInt("number_of_PCIe_3.0"));
-                part.setNumber_of_PCIe_4(rs.getInt("number_of_PCIe_4.0"));
+                part.setPCIe_version(rs.getString("PCIe_version"));
+                part.setNumber_of_PCIe_X1(rs.getInt("number_of_PCIe_X1"));
                 part.setPower_consumption(rs.getInt("power_consumption"));
                 part.setUSB3_supported(rs.getString("USB3.0_supported"));
 

@@ -8,6 +8,7 @@ public class Parts {
     private String brand;
     private String partsName;
     private String type;
+    private String link;
 
     public int getPartsID() {
         return partsID;
@@ -56,4 +57,8 @@ public class Parts {
     public void setType(String type) {
         this.type = type;
     }
+
+    public String getLink() { return link; }
+
+    public void setLink(String link) { this.link = link; }
 }

@@ -1,54 +1,41 @@
 package entity;
 
 public class Motherboard extends Parts{
-    private String compatiable_socket;
-    private int number_of_PCIe_4;
-    private int number_of_PCIe_3;
-    private int number_of_PCIe_2;
+    private String compatible_socket;
+    private String PCIe_version;
+    private int number_of_PCIe_X1;
     private int power_consumption;
     private String USB3_supported;
     private int number_of_m2;
     private String Motherboard_type;
 
-    public String getCompatiable_socket() {
-        return compatiable_socket;
+    public String getCompatible_socket() {
+        return compatible_socket;
     }
 
-    public void setCompatiable_socket(String compatiable_socket) {
-        this.compatiable_socket = compatiable_socket;
+    public void setCompatible_socket(String compatible_socket) {
+        this.compatible_socket = compatible_socket;
     }
 
-    public int getNumber_of_PCIe_4() {
-        return number_of_PCIe_4;
+    public String getPCIe_version() {
+        return PCIe_version;
     }
 
-    public void setNumber_of_PCIe_4(int number_of_PCIe_4) {
-        this.number_of_PCIe_4 = number_of_PCIe_4;
+    public void setPCIe_version(String PCIe_version) {
+        this.PCIe_version = PCIe_version;
     }
 
-    public int getNumber_of_PCIe_3() {
-        return number_of_PCIe_3;
+    public int getNumber_of_PCIe_X1() {
+        return number_of_PCIe_X1;
     }
 
-    public void setNumber_of_PCIe_3(int number_of_PCIe_3) {
-        this.number_of_PCIe_3 = number_of_PCIe_3;
-    }
-
-    public int getNumber_of_PCIe_2() {
-        return number_of_PCIe_2;
-    }
-
-    public void setNumber_of_PCIe_2(int number_of_PCIe_2) {
-        this.number_of_PCIe_2 = number_of_PCIe_2;
-    }
+    public void setNumber_of_PCIe_X1(int number_of_PCIe_X1) { this.number_of_PCIe_X1 = number_of_PCIe_X1; }
 
     public int getPower_consumption() {
         return power_consumption;
     }
 
-    public void setPower_consumption(int power_consumption) {
-        this.power_consumption = power_consumption;
-    }
+    public void setPower_consumption(int power_consumption) { this.power_consumption = power_consumption; }
 
     public String getUSB3_supported() {
         return USB3_supported;

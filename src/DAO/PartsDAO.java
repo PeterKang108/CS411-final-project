@@ -32,6 +32,7 @@ public class PartsDAO {
                 part.setBrand(rs.getString("brand"));
                 part.setPartsName(rs.getString("partsName"));
                 part.setType(rs.getString("type"));
+//                part.setLink(rs.getLink("link"));
                 list.add(part);
             }
             return list;
@@ -81,6 +82,7 @@ public class PartsDAO {
             stmt.setString(4, part.getBrand());
             stmt.setString(5, part.getPartsName());
             stmt.setString(6, part.getType());
+//            stmt.setString(7, part.getLink());
             stmt.executeUpdate();
             return 1;
 
