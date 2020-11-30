@@ -490,7 +490,7 @@
 <br>
     <a>start your own build</a>
     <form name="link_form" method="post" action="MongoDBServlet">
-        <input type="hidden" name="methodType" id="methodTypeStoring" value="store"/>
+        <input type="hidden" name="methodType" id="methodTypeStoring" value="insert"/>
         <br>
         <input type="hidden" name="UserName" id="Username" value=session.getAttribute("username")/>
         <br>
