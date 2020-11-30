@@ -182,6 +182,7 @@ public class PartsDAO {
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1,partsID);
             stmt.executeUpdate();
+
             return 1;
 
         }

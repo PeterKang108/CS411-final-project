@@ -52,7 +52,7 @@ public class MongoDBServlet extends HttpServlet {
         if(GPU2 == null || GPU2.isEmpty()){
 
         } else{
-            map.put("GPU", GPU2);
+            map.put("GPU2", GPU2);
         }
         String Motherboard = request.getParameter("Motherboard");
         if(Motherboard == null || Motherboard.isEmpty()){
@@ -113,6 +113,18 @@ public class MongoDBServlet extends HttpServlet {
 
         } else{
             map.put("Storage6", Storage6);
+        }
+        String Coolingsystem = request.getParameter("Coolingsystem");
+        if(Coolingsystem == null || Coolingsystem.isEmpty()){
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else{
+            map.put("Coolingsystem", Coolingsystem);
+        }
+        String Powersupply = request.getParameter("Powersupply");
+        if(Powersupply == null || Powersupply.isEmpty()){
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else{
+            map.put("Powersupply", Powersupply);
         }
         dao.insertDocument(map, user);
         request.getRequestDispatcher("userShowall.jsp").forward(request, response);
@@ -140,7 +152,7 @@ public class MongoDBServlet extends HttpServlet {
         if(GPU2 == null || GPU2.isEmpty()){
 
         } else{
-            map.put("GPU", GPU2);
+            map.put("GPU2", GPU2);
         }
         String Motherboard = request.getParameter("Motherboard");
         if(Motherboard == null || Motherboard.isEmpty()){
@@ -201,6 +213,18 @@ public class MongoDBServlet extends HttpServlet {
 
         } else{
             map.put("Storage6", Storage6);
+        }
+        String Coolingsystem = request.getParameter("Coolingsystem");
+        if(Coolingsystem == null || Coolingsystem.isEmpty()){
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else{
+            map.put("Coolingsystem", Coolingsystem);
+        }
+        String Powersupply = request.getParameter("Powersupply");
+        if(Powersupply == null || Powersupply.isEmpty()){
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } else{
+            map.put("Powersupply", Powersupply);
         }
         dao.replaceDocument(map, user, id);
         request.getRequestDispatcher("userhistory.jsp").forward(request, response);

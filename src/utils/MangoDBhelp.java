@@ -17,7 +17,7 @@ public class MangoDBhelp {
             MongoClient mongoClient = MongoClients.create();;
 
             //连接到数据库
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("courses");
+            MongoDatabase mongoDatabase = mongoClient.getDatabase("AssembledComputers");
 
             //返回连接数据库对象
             return mongoDatabase;
