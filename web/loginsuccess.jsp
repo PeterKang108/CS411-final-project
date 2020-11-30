@@ -12,8 +12,8 @@
 </head>
 <body>
 <%
-    Useraccount user =(Useraccount) request.getAttribute("user");
-    session.setAttribute("username", user.getUsername());
+    String username =(String) request.getAttribute("username");
+    session.setAttribute("username", username);
 
 %>
 <jsp:forward page="userShowall.jsp"></jsp:forward>

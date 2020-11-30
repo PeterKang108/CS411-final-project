@@ -30,8 +30,8 @@ public class LoginServlet extends HttpServlet {
             } else{
 //                request.setAttribute("user", user);
                 HttpSession session = request.getSession();
-                session.setAttribute("username", username);
-                request.getRequestDispatcher("userShowall.jsp").forward(request, response);
+                request.setAttribute("username", username);
+                request.getRequestDispatcher("loginsuccess.jsp").forward(request, response);
             }
 
         } else{
