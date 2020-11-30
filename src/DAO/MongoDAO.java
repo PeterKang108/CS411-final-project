@@ -85,6 +85,8 @@ public class MongoDAO {
             if(curr.containsKey("Storage6")){
                 result.setStorage6(curr.getInteger("Storage6"));
             }
+            result.setCoolingsystem(curr.getInteger("Coolingsystem"));
+            result.setPowersupply(curr.getInteger("Powersupply"));
             list.add(result);
 
         }

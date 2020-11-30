@@ -1,13 +1,20 @@
 package DAO;
 
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import entity.Parts;
+import org.bson.Document;
+import org.bson.types.ObjectId;
 import utils.JDBChelp;
+import utils.MangoDBhelp;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static com.mongodb.client.model.Filters.eq;
 
 public class PartsDAO {
 
@@ -182,6 +189,25 @@ public class PartsDAO {
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1,partsID);
             stmt.executeUpdate();
+            MongoDatabase database = MangoDBhelp.getconn1();
+            MongoCollection<Document> collection = database.getCollection("userhistory");
+            collection.deleteMany(eq("CPU", partsID));
+            collection.deleteMany(eq("GPU", partsID));
+            collection.deleteMany(eq("GPU2", partsID));
+            collection.deleteMany(eq("Motherboard", partsID));
+            collection.deleteMany(eq("ComputerCase", partsID));
+            collection.deleteMany(eq("Memory", partsID));
+            collection.deleteMany(eq("Memory2", partsID));
+            collection.deleteMany(eq("Storage", partsID));
+            collection.deleteMany(eq("Storage2", partsID));
+            collection.deleteMany(eq("Storage3", partsID));
+            collection.deleteMany(eq("Storage4", partsID));
+            collection.deleteMany(eq("Storage5", partsID));
+            collection.deleteMany(eq("Storage6", partsID));
+            collection.deleteMany(eq("Coolingsystem", partsID));
+            collection.deleteMany(eq("Powersupply", partsID));
+
+
 
             return 1;
 
