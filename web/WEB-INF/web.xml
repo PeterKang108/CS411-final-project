@@ -37,4 +37,13 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MongoDBServlet</servlet-name>
+        <servlet-class>Servlet.MongoDBServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MongoDBServlet</servlet-name>
+        <url-pattern>/MongoDBServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
