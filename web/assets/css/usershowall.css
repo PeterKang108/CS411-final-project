@@ -233,6 +233,7 @@ body.is-preload #bg {
 /* Type */
 body, input, select, textarea {
     color: rgba(255, 255, 255, 0.75);
+    /*text-align: center;*/
     /*color: rgba(41, 36, 33, 0.75);*/
     font-family: "Roboto", sans-serif;
     font-size: 16pt;

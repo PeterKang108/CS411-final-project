@@ -1,3 +1,15 @@
+// $(document).ready(function() {
+//     $('CPU').DataTable();
+//     $('Motherboard').DataTable();
+//     $('CoolingSystem').DataTable();
+//     $('Memory').DataTable();
+//     $('Storage').DataTable();
+//     $('ComputerCase').DataTable();
+//     $('GPU').DataTable();
+//     $('PowerSupply').DataTable();
+//
+// } );
+
 (function() {
 
     "use strict";
@@ -156,7 +168,7 @@ function openMotherboard() {
 }
 
 function openCoolers() {
-    var x = document.getElementById("Cooling System");
+    var x = document.getElementById("CoolingSystem");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -220,3 +232,4 @@ function openPS() {
         x.style.width="100%";
     }
 }
+

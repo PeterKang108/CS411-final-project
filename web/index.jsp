@@ -27,7 +27,7 @@
 <form name="link_form" method="post" action="LoginServlet">
   <input type="text" name="username" id="userId" placeholder="UserId" />
   <br>
-  <input type="text" name="password" id="userPw" placeholder="Password" />
+  <input type="password" name="password" id="userPw" placeholder="Password" />
   <br>
   <input type="submit" value="Sign In">
 </form>
@@ -38,8 +38,8 @@
 <%--<form name="link_form" method="post" action="showall.jsp">--%>
 <%--  <input type="submit" value="show all in database">--%>
 </form>
-<form name="link_form" method="post" action="queueid.jsp">
-  <input type="submit" value="show information of a specfic part">
+<form name="link_form" method="post" action="showall.jsp">
+  <input type="submit" value="show information of all parts">
 </form>
 
 <!-- Footer -->

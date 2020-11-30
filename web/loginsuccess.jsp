@@ -14,8 +14,10 @@
 <%
     String username =(String) request.getAttribute("username");
     session.setAttribute("username", username);
-
 %>
-<jsp:forward page="userShowall.jsp"></jsp:forward>
+<%--<input type="text" name="haha" id="haha" placeholder=<%session.getAttribute("username");%> />--%>
+<%--<input type="text" name="haha" id="haha" placeholder="<%=test%>"/>--%>
+<%--<input type="text" name="haha" id="haha" placeholder=<%user.getPassword();%> />--%>
+<jsp:forward page="userMain.jsp"></jsp:forward>
 </body>
 </html>

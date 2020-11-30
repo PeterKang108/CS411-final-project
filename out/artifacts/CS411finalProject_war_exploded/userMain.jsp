@@ -9,8 +9,11 @@
 <body class="is-preload">
 
 <!-- Header -->
+<%
+    String username = (String) session.getAttribute("username");
+%>
 <header id="header">
-    <h1>Hi, username!</h1>
+    <h1>Hi, <%=username%>!</h1>
 </header>
 
 <!-- Signup Form -->

@@ -96,18 +96,48 @@
     /*================================
     datatable active
     ==================================*/
-    if ($('#dataTable').length) {
-        $('#dataTable').DataTable({
+    if ($('#CPU').length) {
+        $('#CPU').DataTable({
             responsive: true
         });
     }
-    if ($('#dataTable2').length) {
-        $('#dataTable2').DataTable({
+    if ($('#Motherboard').length) {
+        $('#Motherboard').DataTable({
             responsive: true
         });
     }
-    if ($('#dataTable3').length) {
-        $('#dataTable3').DataTable({
+    if ($('#CoolingSystem').length) {
+        $('#CoolingSystem').DataTable({
+            responsive: true
+        });
+    }
+    if ($('#CoolingSystem').length) {
+        $('#CoolingSystem').DataTable({
+            responsive: true
+        });
+    }
+    if ($('#Memory').length) {
+        $('#Memory').DataTable({
+            responsive: true
+        });
+    }
+    if ($('#Storage').length) {
+        $('#Storage').DataTable({
+            responsive: true
+        });
+    }
+    if ($('#ComputerCase').length) {
+        $('#ComputerCase').DataTable({
+            responsive: true
+        });
+    }
+    if ($('#GPU').length) {
+        $('#GPU').DataTable({
+            responsive: true
+        });
+    }
+    if ($('#PowerSupply').length) {
+        $('#PowerSupply').DataTable({
             responsive: true
         });
     }
