@@ -16,6 +16,6 @@
     session.setAttribute("username", user.getUsername());
 
 %>
-<jsp:forward page="showall.jsp"></jsp:forward>
+<jsp:forward page="userShowall.jsp"></jsp:forward>
 </body>
 </html>

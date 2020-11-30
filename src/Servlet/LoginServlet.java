@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name="LoginServlet")
@@ -27,8 +28,10 @@ public class LoginServlet extends HttpServlet {
                 request.setAttribute("errorinfo", "username and password cannot match or user doesn't exist");
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else{
-                request.setAttribute("user", user);
-                request.getRequestDispatcher("loginsuccess.jsp").forward(request, response);
+//                request.setAttribute("user", user);
+                HttpSession session = request.getSession();
+                session.setAttribute("username", username);
+                request.getRequestDispatcher("userShowall.jsp").forward(request, response);
             }
 
         } else{
