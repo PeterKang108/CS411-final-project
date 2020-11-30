@@ -5,59 +5,194 @@
 <html>
 <head>
     <title>BrowseParts</title>
+    <link rel="stylesheet" href="assets/css/usershowall.css" />
+
+
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/font-awesome.min.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/themify-icons.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/metisMenu.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/owl.carousel.min.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/slicknav.min.css">--%>
+<%--    <!-- Start datatable css -->--%>
+<%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">--%>
+    <link rel="stylesheet" type="text/css" href="assets/css/datatable.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/typography.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/default-css.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/styles.css">--%>
+<%--    <link rel="stylesheet" href="dbmanagePage/assets/css/responsive.css">--%>
+
+    <script src="dbmanagePage/assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
+<div class="page-container">
+
+<br>
+
+<div class="main-content-inner">
+    <div class="row">
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="data-tables">
+                <table id="dataTable" class="text-center">
+                    <thead class="text-uppercase">
+                    <tr>
+                        <th scope="col">PartsID</th>
+                        <th scope="col">ratings</th>
+                        <th scope="col">price</th>
+                        <th scope="col">brand</th>
+                        <th scope="col">partsName</th>
+                        <th scope="col">type</th>
+                        <th scope="col">delete</th>
+                        <th scope="col">update</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%
+                        PartsDAO dao = new  PartsDAO();
+                        ArrayList<Parts> parts = dao.getAllParts();
+                        for (Parts part : parts) {
+                    %>
+                    <tr>
+                        <th data-label="PartsID"><%=part.getPartsID() %>
+                        </th>
+                        <td data-label="ratings"><%=part.getRatings()%>
+                        </td>
+                        <td data-label="price"><%=part.getPrice()%>
+                        </td>
+                        <td data-label="brand"><%=part.getBrand()%>
+                        </td>
+                        <td data-label="partsName"><%=part.getPartsName()%>
+                        </td>
+                        <td data-label="type"><%=part.getType()%>
+                        </td>
+                        <td><i class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></i></td>
+                        <td><a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Id</a>
+                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Ratings</a>
+                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
+                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Brand</a>
+                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Name</a>
+                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Type</a></td>
+                    </tr>
+                    <%
+                        }
+                    %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+<button onclick="openCPU()">CPU</button>
 
 
-<a>CPU Table</a>
-<table id = "CPU" width="100%">
-    <thead>
-        <tr>
-            <th scope="col">ratings</th>
-            <th scope="col">price</th>
-            <th scope="col">brand</th>
-            <th scope="col">partsName</th>
-            <th scope="col">Power Consumption</th>
-            <th scope="col">Compatible Socket</th>
-            <th scope="col">Integrated Graphics</th>
-        </tr>
-    </thead>
+<%--<a>CPU Table</a>--%>
+        <div class="row">
+            <div class="col-12 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="data-tables">
+                            <table id="dataTable2" class="text-center" display = "none">
+                                <thead class="text-uppercase">
+                                <tr>
+                                    <th scope="col">ratings</th>
+                                    <th scope="col">price</th>
+                                    <th scope="col">brand</th>
+                                    <th scope="col">partsName</th>
+                                    <th scope="col">Power Consumption</th>
+                                    <th scope="col">Compatible Socket</th>
+                                    <th scope="col">Integrated Graphics</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <%
+                                    CPUDAO daoCPU = new  CPUDAO();
+                                    ArrayList<CPU> CPUs = daoCPU.getAllCPU();
+                                    for (CPU cpu : CPUs) {
+                                %>
+                                <tr>
+                                    <td data-label="ratings" align="center"><%=cpu.getRatings()%>
+                                    </td>
+                                    <td data-label="price" align="center"><%=cpu.getPrice()%>
+                                    </td>
+                                    <td data-label="brand" align="center"><%=cpu.getBrand()%>
+                                    </td>
+                                    <td data-label="partsName" align="center"><%=cpu.getPartsName()%>
+                                    </td>
+                                    <td data-label="Power Consumption" align="center"><%=cpu.getPower_consumption()%>W
+                                    </td>
+                                    <td data-label="Compatible Socket" align="center"><%=cpu.getCompatible_socket()%>
+                                    </td>
+                                    <td data-label="Integrated Graphics" align="center"><%=cpu.getIntegrated_graphics()%>
+                                    </td>
+                                </tr>
+                                <%
+                                    }
+                                %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <tbody>
-        <%
-            CPUDAO daoCPU = new  CPUDAO();
-            ArrayList<CPU> CPUs = daoCPU.getAllCPU();
-            for (CPU cpu : CPUs) {
-        %>
-        <tr>
-            <td data-label="ratings"><%=cpu.getRatings()%>
-            </td>
-            <td data-label="price"><%=cpu.getPrice()%>
-            </td>
-            <td data-label="brand"><%=cpu.getBrand()%>
-            </td>
-            <td data-label="partsName"><%=cpu.getPartsName()%>
-            </td>
-            <td data-label="Power Consumption"><%=cpu.getPower_consumption()%>W
-            </td>
-            <td data-label="Compatible Socket"><%=cpu.getCompatible_socket()%>
-            </td>
-            <td data-label="Integrated Graphics"><%=cpu.getIntegrated_graphics()%>
-            </td>
-        </tr>
-        <%
-            }
-        %>
-    </tbody>
-</table>
+<%--<table id = "CPU" width="100%" display = "none">--%>
+<%--    <thead>--%>
+<%--        <tr>--%>
+<%--            <th scope="col">ratings</th>--%>
+<%--            <th scope="col">price</th>--%>
+<%--            <th scope="col">brand</th>--%>
+<%--            <th scope="col">partsName</th>--%>
+<%--            <th scope="col">Power Consumption</th>--%>
+<%--            <th scope="col">Compatible Socket</th>--%>
+<%--            <th scope="col">Integrated Graphics</th>--%>
+<%--        </tr>--%>
+<%--    </thead>--%>
+
+<%--    <tbody>--%>
+<%--        <%--%>
+<%--            CPUDAO daoCPU = new  CPUDAO();--%>
+<%--            ArrayList<CPU> CPUs = daoCPU.getAllCPU();--%>
+<%--            for (CPU cpu : CPUs) {--%>
+<%--        %>--%>
+<%--        <tr>--%>
+<%--            <td data-label="ratings" align="center"><%=cpu.getRatings()%>--%>
+<%--            </td>--%>
+<%--            <td data-label="price" align="center"><%=cpu.getPrice()%>--%>
+<%--            </td>--%>
+<%--            <td data-label="brand" align="center"><%=cpu.getBrand()%>--%>
+<%--            </td>--%>
+<%--            <td data-label="partsName" align="center"><%=cpu.getPartsName()%>--%>
+<%--            </td>--%>
+<%--            <td data-label="Power Consumption" align="center"><%=cpu.getPower_consumption()%>W--%>
+<%--            </td>--%>
+<%--            <td data-label="Compatible Socket" align="center"><%=cpu.getCompatible_socket()%>--%>
+<%--            </td>--%>
+<%--            <td data-label="Integrated Graphics" align="center"><%=cpu.getIntegrated_graphics()%>--%>
+<%--            </td>--%>
+<%--        </tr>--%>
+<%--        <%--%>
+<%--            }--%>
+<%--        %>--%>
+<%--    </tbody>--%>
+<%--</table>--%>
 
 <br>
 <br>
-<br>
-<br>
 
-<a>Motherboard Table</a>
-<table id = "Motherboard" width="100%">
+
+<button onclick="openMotherboard()">Motherboard</button>
+<%--<a>Motherboard Table</a>--%>
+<table id = "Motherboard" width="100%" display = "none">
     <thead>
     <tr>
         <th scope="col">ratings</th>
@@ -101,11 +236,11 @@
 
 <br>
 <br>
-<br>
-<br>
 
-<a>Cooling System Table</a>
-<table id = "Cooling System" width="100%">
+
+<button onclick="openCoolers()">Cooling System</button>
+<%--<a>Cooling System Table</a>--%>
+<table id = "Cooling System" width="100%" display = "none">
     <thead>
     <tr>
         <th scope="col">ratings</th>
@@ -143,11 +278,11 @@
 
 <br>
 <br>
-<br>
-<br>
 
-<a>Memory Table</a>
-<table id = "Memory" width="100%">
+
+<button onclick="openMemory()">Memory</button>
+<%--<a>Memory Table</a>--%>
+<table id = "Memory" width="100%" display = "none">
     <thead>
     <tr>
         <th scope="col">ratings</th>
@@ -183,11 +318,11 @@
 
 <br>
 <br>
-<br>
-<br>
 
-<a>Storage Table</a>
-<table id = "Storage" width="100%">
+
+<button onclick="openStorage()">Storage</button>
+<%--<a>Storage Table</a>--%>
+<table id = "Storage" width="100%" display = "none">
     <thead>
     <tr>
         <th scope="col">ratings</th>
@@ -225,11 +360,11 @@
 
 <br>
 <br>
-<br>
-<br>
 
-<a>Case Table</a>
-<table id = "ComputerCase" width="100%">
+
+<button onclick="openCase()">Cases</button>
+<%--<a>Case Table</a>--%>
+<table id = "ComputerCase" width="100%" display = "none">
     <thead>
     <tr>
         <th scope="col">ratings</th>
@@ -269,11 +404,11 @@
 
 <br>
 <br>
-<br>
-<br>
 
-<a>GPU Table</a>
-<table id = "GPU" width="100%">
+
+<button onclick="openGPU()">Graphic Cards</button>
+<%--<a>GPU Table</a>--%>
+<table id = "GPU" width="100%" display = "none">
     <thead>
     <tr>
         <th scope="col">ratings</th>
@@ -317,10 +452,9 @@
 
 <br>
 <br>
-<br>
-<br>
 
-<a>PowerSupply Table</a>
+<button onclick="openPS()">Power Supply</button>
+<%--<a>PowerSupply Table</a>--%>
 <table id = "PowerSupply" width="100%">
     <thead>
     <tr>
@@ -352,6 +486,63 @@
     %>
     </tbody>
 </table>
+<br>
+<br>
+    <a>start your own build</a>
+    <form name="link_form" method="post" action="MongoDBServlet">
+        <input type="text" name="CPU" id="CPUID" placeholder="CPUID" />
+        <br>
+        <input type="text" name="GPU" id="GPUID" placeholder="GPUID" />
+        <br>
+        <input type="text" name="Motherboard" id="MotherboardID" placeholder="MotherboardID" />
+        <br>
+        <input type="text" name="ComputerCase" id="ComputerCaseID" placeholder="ComputerCaseID" />
+        <br>
+        <input type="text" name="Memory" id="MemoryID" placeholder="MemoryID" />
+        <br>
+        <input type="text" name="Memory2" id="Memory2ID" placeholder="Memory2ID" />
+        <br>
+        <input type="text" name="Storage" id="StorageID" placeholder="StorageID" />
+        <br>
+        <input type="text" name="Storage2" id="Storage2ID" placeholder="Storage2ID" />
+        <br>
+        <input type="text" name="Storage3" id="Storage3ID" placeholder="Storage3ID" />
+        <br>
+        <input type="text" name="Storage4" id="Storage4ID" placeholder="Storage4ID" />
+        <br>
+        <input type="text" name="Storage5" id="Storage5ID" placeholder="Storage5ID" />
+        <br>
+        <input type="text" name="Storage6" id="Storage6ID" placeholder="Storage6ID" />
+        <br>
+        <input type="text" name="Coolingsystem" id="CoolingsystemID" placeholder="CoolingsystemID" />
+        <br>
+        <input type="text" name="Powersupply" id="PowersupplyID" placeholder="PowersupplyID" />
+        <br>
+        <input type="submit" value="Assemble">
+    </form>
+
+</div>
+
+<script src="assets/js/usershowall.js"></script>
+
+<script src="dbmanagePage/assets/js/vendor/jquery-2.2.4.min.js"></script>
+
+<script src="dbmanagePage/assets/js/popper.min.js"></script>
+<script src="dbmanagePage/assets/js/bootstrap.min.js"></script>
+<script src="dbmanagePage/assets/js/owl.carousel.min.js"></script>
+<script src="dbmanagePage/assets/js/metisMenu.min.js"></script>
+<script src="dbmanagePage/assets/js/jquery.slimscroll.min.js"></script>
+<script src="dbmanagePage/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Start datatable js -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script>
+
+<script src="dbmanagePage/assets/js/plugins.js"></script>
+<script src="dbmanagePage/assets/js/scripts.js"></script>
 
 
 </body>

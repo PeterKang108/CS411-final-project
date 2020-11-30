@@ -2,12 +2,11 @@
 <%@ page import="entity.Parts" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="DAO.PartsDAO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" autoFlush="false" buffer="300kb"%>
 
 <html>
 
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>DB Management Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
