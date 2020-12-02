@@ -27,7 +27,7 @@ public class MongoDAO {
         collection.insertOne(document);
         return 1;
     }
-    public int replaceDocument(Map<String, String> map, String username, String id){
+    public int replaceDocument(Map<String, String> map, String username, String id) {
         MongoDatabase database = MangoDBhelp.getconn1();
         MongoCollection<Document> collection = database.getCollection("userhistory");
         Document document = new Document("user", username);
@@ -37,7 +37,7 @@ public class MongoDAO {
         collection.replaceOne(eq("_id", new ObjectId(id)), document);
         return 1;
     }
-    public int deleteDocument(String id){
+    public int deleteDocument(String id) {
         MongoDatabase database = MangoDBhelp.getconn1();
         MongoCollection<Document> collection = database.getCollection("userhistory");
         collection.deleteOne(eq("_id", new ObjectId(id)));

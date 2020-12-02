@@ -13,7 +13,7 @@
 <body>
 <%
     String username =(String) request.getAttribute("username");
-    session.setAttribute("username", username);
+    request.getSession().setAttribute("username", username);
 %>
 <%--<input type="text" name="haha" id="haha" placeholder=<%session.getAttribute("username");%> />--%>
 <%--<input type="text" name="haha" id="haha" placeholder="<%=test%>"/>--%>

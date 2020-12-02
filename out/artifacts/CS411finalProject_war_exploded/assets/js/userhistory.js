@@ -8,4 +8,5 @@ $(document).ready(function() {
     $('#ComputerCase').DataTable();
     $('#GPU').DataTable();
     $('#PowerSupply').DataTable();
+    $('#PC').DataTable();
 } );
