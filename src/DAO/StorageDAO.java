@@ -1,5 +1,6 @@
 package DAO;
 
+import entity.Memory;
 import entity.Parts;
 import entity.Storage;
 import utils.JDBChelp;
@@ -113,6 +114,56 @@ public class StorageDAO {
                 }
 
             }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
+
+
+    public int insertStorage(Storage part){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "insert into Parts(partsID, ratings, price, brand, partsName, type)" +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setDouble(2, part.getRatings());
+            stmt.setDouble(3, part.getPrice());
+            stmt.setString(4, part.getBrand());
+            stmt.setString(5, part.getPartsName());
+            stmt.setString(6, part.getType());
+            stmt.executeUpdate();
+            String sqll = "insert into Storage(partsID, storage_type, capacity, interface, price_per_gb)" +
+                    "values(?,?,?,?,?);";
+            stmt = conn.prepareStatement(sqll);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setString(2, part.getStorage_type());
+            stmt.setInt(3, part.getCapacity());
+            stmt.setString(4, part.getInterface());
+            stmt.setFloat(5, part.getPrice_per_GB());
+            stmt.executeUpdate();
+            return 1;
+
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return 0;
+        }
+        finally {
 
             if(stmt != null){
                 try {

@@ -22,6 +22,7 @@ public class UpdatePriceServlet extends HttpServlet {
         String priceStr = request.getParameter("price");
         double price = Double.valueOf(priceStr);
 
+
         PartsDAO dao=new PartsDAO();
         dao.updatePrice(id, price);
         request.getRequestDispatcher("showall.jsp").forward(request, response);

@@ -1,5 +1,6 @@
 package DAO;
 
+import entity.CPU;
 import entity.GPU;
 import entity.Parts;
 import utils.JDBChelp;
@@ -117,6 +118,57 @@ public class GPUDAO {
                 }
 
             }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
+
+
+    public int insertGPU(GPU part){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+//        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "insert into Parts(partsID, ratings, price, brand, partsName, type)" +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setDouble(2, part.getRatings());
+            stmt.setDouble(3, part.getPrice());
+            stmt.setString(4, part.getBrand());
+            stmt.setString(5, part.getPartsName());
+            stmt.setString(6, part.getType());
+            stmt.executeUpdate();
+            sql = "insert into GPU(partsID, GPU_type, chipset, GPU_memory, power_consumption, interface_type, RGB)" +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setString(2, part.getGPU_type());
+            stmt.setString(3, part.getChipset());
+            stmt.setInt(4, part.getGPU_memory());
+            stmt.setString(5, part.getInterface_type());
+            stmt.setString(6, part.getRGB());
+            stmt.executeUpdate();
+            return 1;
+
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return 0;
+        }
+        finally {
 
             if(stmt != null){
                 try {

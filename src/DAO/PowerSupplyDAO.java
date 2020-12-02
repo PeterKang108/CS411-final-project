@@ -1,5 +1,6 @@
 package DAO;
 
+import entity.Motherboard;
 import entity.Parts;
 import entity.PowerSupply;
 import utils.JDBChelp;
@@ -108,6 +109,54 @@ public class PowerSupplyDAO {
                 }
 
             }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
+
+    public int insertPowerSupply(PowerSupply part){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "insert into Parts(partsID, ratings, price, brand, partsName, type) " +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setDouble(2, part.getRatings());
+            stmt.setDouble(3, part.getPrice());
+            stmt.setString(4, part.getBrand());
+            stmt.setString(5, part.getPartsName());
+            stmt.setString(6, part.getType());
+            stmt.executeUpdate();
+
+            String sqll = "insert into PowerSupply(partsID, Wattage) " +
+                    "values(?,?);";
+
+            stmt = conn.prepareStatement(sqll);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setInt(2, part.getWattage());
+            stmt.executeUpdate();
+            return 1;
+
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return 0;
+        }
+        finally {
 
             if(stmt != null){
                 try {

@@ -1,6 +1,7 @@
 package DAO;
 
 import entity.CPU;
+import entity.ComputerCase;
 import entity.Parts;
 import utils.JDBChelp;
 
@@ -111,6 +112,55 @@ public class CPUDAO {
                 }
 
             }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
+
+
+    public int insertCPU(CPU part){
+        Connection conn = null;
+        PreparedStatement stmt = null;
+//        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "insert into Parts(partsID, ratings, price, brand, partsName, type)" +
+                    "values(?,?,?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setDouble(2, part.getRatings());
+            stmt.setDouble(3, part.getPrice());
+            stmt.setString(4, part.getBrand());
+            stmt.setString(5, part.getPartsName());
+            stmt.setString(6, part.getType());
+            stmt.executeUpdate();
+            sql = "insert into CPU(partsID, power_consumption, compatible_socket, integrated_graphics)" +
+                    "values(?,?,?,?);";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, part.getPartsID());
+            stmt.setInt(2, part.getPower_consumption());
+            stmt.setString(3, part.getCompatible_socket());
+            stmt.setString(4, part.getIntegrated_graphics());
+            stmt.executeUpdate();
+            return 1;
+
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return 0;
+        }
+        finally {
 
             if(stmt != null){
                 try {
