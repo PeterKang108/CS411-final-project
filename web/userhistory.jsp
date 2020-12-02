@@ -2,6 +2,7 @@
 <%@ page import="DAO.*" %>
 <%@ page import="entity.*" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" autoFlush="false" buffer="300kb"%>
 <%--
   Created by IntelliJ IDEA.
@@ -56,6 +57,23 @@
             request.setAttribute("reco", null);
         }
         MongoDAO daoHistory = new MongoDAO();
+//        Map<String, String> recommend = new HashMap<String, String>();
+        int recoCPU = -1;
+        int recoGPU = -1;
+        int recoGPU2 = -1;
+        int recoMotherboard = -1;
+        int recoMemory = -1;
+        int recoStorage = -1;
+        int recoStorage2 = -1;
+        int recoStorage3 = -1;
+        int recoStorage4 = -1;
+        int recoStorage5 = -1;
+        int recoStorage6 = -1;
+        int recoComputerCase = -1;
+        int recoMemory2 = -1;
+        int recoPowersupply = -1;
+        int recoCoolingsystem = -1;
+
         CPUDAO daoCPU = new CPUDAO();
         GPUDAO daoGPU = new GPUDAO();
         MotherboardDAO daoMB = new MotherboardDAO();
@@ -145,13 +163,7 @@
 
 <br>
 
-<%
-    if (reco == 1) {
-        GenerateDAO R = new GenerateDAO();
-        Map<String, String> recommend = R.gainRecommand(username);
-        daoHistory.insertDocument(recommend, username);
-    }
-%>
+
 <form name="link_form" method="post" action="userhistory.jsp">
     <input type="hidden" name="reco" value="1">
     <input type="submit" value="See some recommendation">
@@ -159,7 +171,128 @@
 
 <%
     }
+    if (reco == 1) {
+        GenerateDAO R = new GenerateDAO();
+        Map<String, String> recommend = R.gainRecommand(username);
+        if (recommend.containsKey("GPU")) {
+            recoGPU = Integer.parseInt(recommend.get("GPU"));
+        }
+        if (recommend.containsKey("GPU2")) {
+            recoGPU2 = Integer.parseInt(recommend.get("GPU2"));
+        }
+        recoCPU = Integer.parseInt(recommend.get("CPU"));
+        recoMotherboard = Integer.parseInt(recommend.get("Motherboard"));
+        recoMemory = Integer.parseInt(recommend.get("Memory"));
+        if (recommend.containsKey("Storage")) {
+            recoStorage = Integer.parseInt(recommend.get("Storage"));
+        }
+        if (recommend.containsKey("Storage2")) {
+            recoStorage2 = Integer.parseInt(recommend.get("Storage2"));
+        }
+        if (recommend.containsKey("Storage3")) {
+            recoStorage3 = Integer.parseInt(recommend.get("Storage3"));
+        }
+        if (recommend.containsKey("Storage4")) {
+            recoStorage4 = Integer.parseInt(recommend.get("Storage4"));
+        }
+        if (recommend.containsKey("Storage5")) {
+            recoStorage5 = Integer.parseInt(recommend.get("Storage5"));
+        }
+        if (recommend.containsKey("Storage6")) {
+            recoStorage6 = Integer.parseInt(recommend.get("Storage6"));
+        }
+        recoComputerCase = Integer.parseInt(recommend.get("ComputerCase"));
+        if (recommend.containsKey("Memory2")) {
+            recoMemory2 = Integer.parseInt(recommend.get("Memory2"));
+        }
+        recoPowersupply = Integer.parseInt(recommend.get("Powersupply"));
+        recoCoolingsystem = Integer.parseInt(recommend.get("Coolingsystem"));
 %>
+
+
+<div id = "CPU1" >
+    <table id="Motherboard" width="100%" class="display">
+        <thead class="text-uppercase">
+        <tr>
+            <th scope="col">CPU</th>
+            <th scope="col">GPU chipset</th>
+            <th scope="col">Memory</th>
+            <th scope="col">Specifications</th>
+            <th scope="col">Add</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+                <%
+                String CPUN = "";
+                if (recoCPU != -1) {
+                    CPU thisCPU = daoCPU.getSpecialCPU(recoCPU);
+                    CPUN = thisCPU.getPartsName();
+                }%>
+            <td data-label="CPU" align="center"><%=CPUN%>
+            </td>
+                <%
+            String Chip = "";
+            if (recoGPU != -1) {
+                GPU thisGPU = daoGPU.getSpecialGPU(recoGPU);
+                Chip = thisGPU.getChipset();
+            }
+        %>
+            <td data-label="GPU" align="center"><%=Chip%>
+            </td>
+
+
+                <%
+            String m1 = "";
+            String m2 = "";
+            if (recoMemory != -1) {
+                Memory thisMemory = daoMemory.getSpecialMemory(recoMemory);
+                m1 = thisMemory.getPartsName();
+            }
+            if (recoMemory2 != -1) {
+                Memory thisMemory2 = daoMemory.getSpecialMemory(recoMemory2);
+                m2 = thisMemory2.getPartsName();
+            }
+        %>
+            <td data-label="Memory" align="center"><%=m1%>
+                <br><%=m2%>
+            </td>
+
+
+            <td data-label="show" align="center">
+                <form action="userShowSpe.jsp" method="POST">
+                    <input type="hidden" name="iCPU" value="<%=recoCPU%>"/>
+                    <input type="hidden" name="iGPU" value="<%=recoGPU%>"/>
+                    <input type="hidden" name="iGPU2" value="<%=recoGPU2%>"/>
+                    <input type="hidden" name="iMB" value="<%=recoMotherboard%>"/>
+                    <input type="hidden" name="iCooler" value="<%=recoCoolingsystem%>"/>
+                    <input type="hidden" name="iMemory" value="<%=recoMemory%>"/>
+                    <input type="hidden" name="iMemory2" value="<%=recoMemory2%>"/>
+                    <input type="hidden" name="iStorage" value="<%=recoStorage%>"/>
+                    <input type="hidden" name="iStorage2" value="<%=recoStorage2%>"/>
+                    <input type="hidden" name="iStorage3" value="<%=recoStorage3%>"/>
+                    <input type="hidden" name="iStorage4" value="<%=recoStorage4%>"/>
+                    <input type="hidden" name="iStorage5" value="<%=recoStorage5%>"/>
+                    <input type="hidden" name="iStorage6" value="<%=recoStorage6%>"/>
+                    <input type="hidden" name="iCase" value="<%=recoComputerCase%>"/>
+                    <input type="hidden" name="iPS" value="<%=recoPowersupply%>"/>
+                    <input type="submit" value="Specifcations" />
+                </form>
+            </td>
+
+            <td data-label="Add" align="center">
+                <form action="userhistory.jsp">
+                    <input type="button" onclick="<%daoHistory.insertDocument(recommend, username);%>" style="display: none">
+                    <input type="submit">
+                </form>
+            </td>
+        </tbody>
+    </table>
+</div>
+
+
+<%}%>
 
 <form name="link_form" method="post" action="userShowall.jsp">
     <input type="submit" value="Start a new assemble">
