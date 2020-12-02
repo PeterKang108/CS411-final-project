@@ -3,6 +3,7 @@ package entity;
 public class Useraccount {
     private String Username;
     private String password;
+    private String type;
 
     public String getUsername() {
         return Username;
@@ -18,5 +19,13 @@ public class Useraccount {
 
     public void setPassword(String password) {
         this.password=password;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type=type;
     }
 }

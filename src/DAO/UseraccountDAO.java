@@ -29,6 +29,7 @@ public class UseraccountDAO {
                 user = new Useraccount();
                 user.setUsername(username);
                 user.setPassword(password);
+                user.setType(rs.getString("Type"));
             }
 
         }
