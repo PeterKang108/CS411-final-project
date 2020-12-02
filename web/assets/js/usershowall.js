@@ -146,7 +146,7 @@
 })();
 
 function openCPU() {
-    var x = document.getElementById("CPU");
+    var x = document.getElementById("CPU1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -157,7 +157,7 @@ function openCPU() {
 }
 
 function openMotherboard() {
-    var x1 = document.getElementById("Motherboard");
+    var x1 = document.getElementById("Motherboard1");
     if (x1.style.display === "none") {
         x1.style.display = "inline-table";
         x1.style.width="100%";
@@ -168,7 +168,7 @@ function openMotherboard() {
 }
 
 function openCoolers() {
-    var x = document.getElementById("CoolingSystem");
+    var x = document.getElementById("CoolingSystem1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -179,7 +179,7 @@ function openCoolers() {
 }
 
 function openMemory() {
-    var x = document.getElementById("Memory");
+    var x = document.getElementById("Memory1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -190,7 +190,7 @@ function openMemory() {
 }
 
 function openStorage() {
-    var x = document.getElementById("Storage");
+    var x = document.getElementById("Storage1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -201,7 +201,7 @@ function openStorage() {
 }
 
 function openCase() {
-    var x = document.getElementById("ComputerCase");
+    var x = document.getElementById("ComputerCase1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -212,7 +212,7 @@ function openCase() {
 }
 
 function openGPU() {
-    var x = document.getElementById("GPU");
+    var x = document.getElementById("GPU1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
         x.style.width="100%";
@@ -223,13 +223,12 @@ function openGPU() {
 }
 
 function openPS() {
-    var x = document.getElementById("PowerSupply");
+    var x = document.getElementById("PowerSupply1");
     if (x.style.display === "none") {
         x.style.display = "inline-table";
-        x.style.width="100%";
     } else {
         x.style.display = "none";
-        x.style.width="100%";
     }
 }
+
 

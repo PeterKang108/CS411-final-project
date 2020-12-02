@@ -4,7 +4,7 @@ import DAO.PartsDAO;
 
 import java.io.IOException;
 
-public class DeleteServlet extends javax.servlet.http.HttpServlet {
+public class   DeleteServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         doGet(request,response);
     }

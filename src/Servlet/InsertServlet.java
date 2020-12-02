@@ -32,7 +32,7 @@ public class InsertServlet extends HttpServlet {
         String type = request.getParameter("type");
 
 
-        PartsDAO dao=new PartsDAO();
+        PartsDAO dao = new PartsDAO();
         Parts part = new Parts();
         part.setPartsID(PartsID);
         part.setRatings(ratings);

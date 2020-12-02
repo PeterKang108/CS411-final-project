@@ -11,8 +11,8 @@
 <%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">--%>
     <link rel="stylesheet" type="text/css" href="assets/css/datatable.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+<%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">--%>
+<%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">--%>
 <%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">--%>
 <%--    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">--%>
     <script src="dbmanagePage/assets/js/vendor/modernizr-2.8.3.min.js"></script>
@@ -20,17 +20,176 @@
 <body>
 
 <br>
+
+<%
+    //CPU
+    int addedCPU = -1;
+    if (session.getAttribute("addCPU") != null) {
+        addedCPU = Integer.parseInt((String)session.getAttribute("addCPU"));
+    }
+    String addedCPUname = "";
+    if (addedCPU > 100) {
+        addedCPUname = (String) session.getAttribute("addCPUname");
+    }
+
+
+    //MB
+    int addedMB = -1;
+    if (session.getAttribute("addMB") != null) {
+        addedMB = Integer.parseInt((String)session.getAttribute("addMB"));
+    }
+    String addedMBname = "";
+    if (addedMB > 100) {
+        addedMBname = (String) session.getAttribute("addMBname");
+    }
+//    String addedMBsocket = "";
+//    if (addedMB > 100) {
+//        addedMBsocket = (String) session.getAttribute("addMBsocket");
+//    }
+
+    //Cooler
+    int addedCooler = -1;
+    if (session.getAttribute("addCooler") != null) {
+        addedCooler = Integer.parseInt((String)session.getAttribute("addCooler"));
+    }
+    String addedCoolername = "";
+    if (addedCooler > 100) {
+        addedCoolername = (String) session.getAttribute("addCoolername");
+    }
+
+    //Memory
+    int addedMemory = -1;
+    if (session.getAttribute("addMemory") != null) {
+        addedMemory = Integer.parseInt((String)session.getAttribute("addMemory"));
+    }
+    String addedMemoryname = "";
+    if (addedMemory > 100) {
+        addedMemoryname = (String) session.getAttribute("addMemoryname");
+    }
+
+    //Memory2
+    int addedMemory2 = -1;
+    if (session.getAttribute("addMemory2") != null) {
+        addedMemory2 = Integer.parseInt((String)session.getAttribute("addMemory2"));
+    }
+    String addedMemory2name = "";
+    if (addedMemory2 > 100) {
+        addedMemory2name = (String) session.getAttribute("addMemory2name");
+    }
+
+    //Storage
+    int addedStorage = -1;
+    if (session.getAttribute("addStorage") != null) {
+        addedStorage = Integer.parseInt((String)session.getAttribute("addStorage"));
+    }
+    String addedStoragename = "";
+    if (addedStorage > 100) {
+        addedStoragename = (String) session.getAttribute("addStoragename");
+    }
+
+    //Storage2
+    int addedStorage2 = -1;
+    if (session.getAttribute("addStorage2") != null) {
+        addedStorage2 = Integer.parseInt((String)session.getAttribute("addStorage2"));
+    }
+    String addedStorage2name = "";
+    if (addedStorage2 > 100) {
+        addedStorage2name = (String) session.getAttribute("addStorage2name");
+    }
+
+    //Storage3
+    int addedStorage3 = -1;
+    if (session.getAttribute("addStorage3") != null) {
+        addedStorage3 = Integer.parseInt((String)session.getAttribute("addStorage3"));
+    }
+    String addedStorage3name = "";
+    if (addedStorage3 > 100) {
+        addedStorage3name = (String) session.getAttribute("addStorage3name");
+    }
+
+    //Storage4
+    int addedStorage4 = -1;
+    if (session.getAttribute("addStorage4") != null) {
+        addedStorage4 = Integer.parseInt((String)session.getAttribute("addStorage4"));
+    }
+    String addedStorage4name = "";
+    if (addedStorage4 > 100) {
+        addedStorage4name = (String) session.getAttribute("addStorage4name");
+    }
+
+    //Storage5
+    int addedStorage5 = -1;
+    if (session.getAttribute("addStorage5") != null) {
+        addedStorage5 = Integer.parseInt((String)session.getAttribute("addStorage5"));
+    }
+    String addedStorage5name = "";
+    if (addedStorage5 > 100) {
+        addedStorage5name = (String) session.getAttribute("addStorage5name");
+    }
+
+    //Storage6
+    int addedStorage6 = -1;
+    if (session.getAttribute("addStorage6") != null) {
+        addedStorage6 = Integer.parseInt((String)session.getAttribute("addStorage6"));
+    }
+    String addedStorage6name = "";
+    if (addedStorage6 > 100) {
+        addedStorage6name = (String) session.getAttribute("addStorage6name");
+    }
+
+    //Case
+    int addedCase = -1;
+    if (session.getAttribute("addCase") != null) {
+        addedCase = Integer.parseInt((String)session.getAttribute("addCase"));
+    }
+    String addedCasename = "";
+    if (addedCase > 100) {
+        addedCasename = (String) session.getAttribute("addCasename");
+    }
+
+    //GPU
+    int addedGPU = -1;
+    if (session.getAttribute("addGPU") != null) {
+        addedGPU = Integer.parseInt((String)session.getAttribute("addGPU"));
+    }
+    String addedGPUname = "";
+    if (addedGPU > 100) {
+        addedGPUname = (String) session.getAttribute("addGPUname");
+    }
+
+    //GPU2
+    int addedGPU2 = -1;
+    if (session.getAttribute("addGPU2") != null) {
+        addedGPU2 = Integer.parseInt((String)session.getAttribute("addGPU2"));
+    }
+    String addedGPU2name = "";
+    if (addedGPU2 > 100) {
+        addedGPU2name = (String) session.getAttribute("addGPU2name");
+    }
+
+    //Power Supply
+    int addedPS = -1;
+    if (session.getAttribute("addPS") != null) {
+        addedPS = Integer.parseInt((String)session.getAttribute("addPS"));
+    }
+    String addedPSname = "";
+    if (addedPS > 100) {
+        addedPSname = (String) session.getAttribute("addPSname");
+    }
+%>
+
+
 <button onclick="openCPU()">CPU</button>
-
-
-<%--<a>CPU Table</a>--%>
-<table id="CPU" class="text-center" display = "none">
+<div id = "CPU1" style="text-align:center; display:none">
+    <br>
+<table id="CPU" class="text-center" >
     <thead class="text-uppercase">
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
         <th scope="col">Power Consumption</th>
         <th scope="col">Compatible Socket</th>
         <th scope="col">Integrated Graphics</th>
@@ -41,15 +200,28 @@
         CPUDAO daoCPU = new  CPUDAO();
         ArrayList<CPU> CPUs = daoCPU.getAllCPU();
         for (CPU cpu : CPUs) {
+//            if (addedMBsocket != null) {
+//                if (cpu.getCompatible_socket() != addedMBsocket) {
+//                    continue;
+//                }
+//            }
     %>
     <tr>
+        <td data-label="choice" align="center">
+            <form method="POST" action="tempSave.jsp">
+                <input type="hidden" name="addCPU" value="<%=cpu.getPartsID()%>"/>
+                <input type="hidden" name="addCPUname" value="<%=cpu.getPartsName()%>"/>
+                <input type="hidden" name="position" value="1"/>
+                <input type="submit" value="Add" />
+            </form>
+        </td>
+        <td data-label="partsName" align="center"><%=cpu.getPartsName()%>
+        </td>
         <td data-label="ratings" align="center"><%=cpu.getRatings()%>
         </td>
         <td data-label="price" align="center"><%=cpu.getPrice()%>
         </td>
         <td data-label="brand" align="center"><%=cpu.getBrand()%>
-        </td>
-        <td data-label="partsName" align="center"><%=cpu.getPartsName()%>
         </td>
         <td data-label="Power Consumption" align="center"><%=cpu.getPower_consumption()%>W
         </td>
@@ -63,113 +235,25 @@
     %>
     </tbody>
 </table>
-<%--        <div class="row">--%>
-<%--            <div class="col-12 mt-5">--%>
-<%--                <div class="card">--%>
-<%--                    <div class="card-body">--%>
-<%--                        <div class="data-tables">--%>
-<%--                            <table id="dataTable" class="text-center" display = "none">--%>
-<%--                                <thead class="text-uppercase">--%>
-<%--                                <tr>--%>
-<%--                                    <th scope="col">ratings</th>--%>
-<%--                                    <th scope="col">price</th>--%>
-<%--                                    <th scope="col">brand</th>--%>
-<%--                                    <th scope="col">partsName</th>--%>
-<%--                                    <th scope="col">Power Consumption</th>--%>
-<%--                                    <th scope="col">Compatible Socket</th>--%>
-<%--                                    <th scope="col">Integrated Graphics</th>--%>
-<%--                                </tr>--%>
-<%--                                </thead>--%>
-<%--                                <tbody>--%>
-<%--                                <%--%>
-<%--//                                    CPUDAO daoCPU = new  CPUDAO();--%>
-<%--                                    ArrayList<CPU> CPUs1 = daoCPU.getAllCPU();--%>
-<%--                                    for (CPU cpu : CPUs1) {--%>
-<%--                                %>--%>
-<%--                                <tr>--%>
-<%--                                    <td data-label="ratings" align="center"><%=cpu.getRatings()%>--%>
-<%--                                    </td>--%>
-<%--                                    <td data-label="price" align="center"><%=cpu.getPrice()%>--%>
-<%--                                    </td>--%>
-<%--                                    <td data-label="brand" align="center"><%=cpu.getBrand()%>--%>
-<%--                                    </td>--%>
-<%--                                    <td data-label="partsName" align="center"><%=cpu.getPartsName()%>--%>
-<%--                                    </td>--%>
-<%--                                    <td data-label="Power Consumption" align="center"><%=cpu.getPower_consumption()%>W--%>
-<%--                                    </td>--%>
-<%--                                    <td data-label="Compatible Socket" align="center"><%=cpu.getCompatible_socket()%>--%>
-<%--                                    </td>--%>
-<%--                                    <td data-label="Integrated Graphics" align="center"><%=cpu.getIntegrated_graphics()%>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-<%--                                <%--%>
-<%--                                    }--%>
-<%--                                %>--%>
-<%--                                </tbody>--%>
-<%--                            </table>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--<table id = "CPU" width="100%" display = "none">--%>
-<%--    <thead>--%>
-<%--        <tr>--%>
-<%--            <th scope="col">ratings</th>--%>
-<%--            <th scope="col">price</th>--%>
-<%--            <th scope="col">brand</th>--%>
-<%--            <th scope="col">partsName</th>--%>
-<%--            <th scope="col">Power Consumption</th>--%>
-<%--            <th scope="col">Compatible Socket</th>--%>
-<%--            <th scope="col">Integrated Graphics</th>--%>
-<%--        </tr>--%>
-<%--    </thead>--%>
-
-<%--    <tbody>--%>
-<%--        <%--%>
-<%--            CPUDAO daoCPU = new  CPUDAO();--%>
-<%--            ArrayList<CPU> CPUs = daoCPU.getAllCPU();--%>
-<%--            for (CPU cpu : CPUs) {--%>
-<%--        %>--%>
-<%--        <tr>--%>
-<%--            <td data-label="ratings" align="center"><%=cpu.getRatings()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="price" align="center"><%=cpu.getPrice()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="brand" align="center"><%=cpu.getBrand()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="partsName" align="center"><%=cpu.getPartsName()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="Power Consumption" align="center"><%=cpu.getPower_consumption()%>W--%>
-<%--            </td>--%>
-<%--            <td data-label="Compatible Socket" align="center"><%=cpu.getCompatible_socket()%>--%>
-<%--            </td>--%>
-<%--            <td data-label="Integrated Graphics" align="center"><%=cpu.getIntegrated_graphics()%>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--        <%--%>
-<%--            }--%>
-<%--        %>--%>
-<%--    </tbody>--%>
-<%--</table>--%>
+</div>
 
 <br>
-<br>
-
 
 <button onclick="openMotherboard()">Motherboard</button>
 <%--<a>Motherboard Table</a>--%>
-<table id = "Motherboard" width="100%" display = "none" class="text-center">
+<div id = "Motherboard1" style="display:none">
+    <br>
+<table id = "Motherboard" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
         <th scope="col">Compatible Socket</th>
         <th scope="col">PCIe Version</th>
         <th scope="col">Number of PCIe X1 port</th>
-        <th scope="col">Power Consumption</th>
         <th scope="col">USB 3.0 Support?</th>
         <th scope="col">Number of M.2 port</th>
         <th scope="col">size</th>
@@ -183,14 +267,21 @@
         for (Motherboard M : Motherboards) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addMB" value="<%=M.getPartsID()%>"/>
+                <input type="hidden" name="addMBname" value="<%=M.getPartsName()%>"/>
+                <input type="hidden" name="position" value="4"/>
+                <input type="submit" value="Add" />
+            </form>
+        </td>
+        <td data-label="partsName"><%=M.getPartsName()%></td>
         <td data-label="ratings"><%=M.getRatings()%></td>
         <td data-label="price"><%=M.getPrice()%></td>
         <td data-label="brand"><%=M.getBrand()%></td>
-        <td data-label="partsName"><%=M.getPartsName()%></td>
         <td data-label="Compatible Socket"><%=M.getCompatible_socket()%></td>
         <td data-label="PCIe_version"><%=M.getPCIe_version()%></td>
         <td data-label="number_of_PCIe_X1"><%=M.getNumber_of_PCIe_X1()%></td>
-        <td data-label="power_consumption"><%=M.getPower_consumption()%></td>
         <td data-label="Number of m.2"><%=M.getNumber_of_m2()%></td>
         <td data-label="USB3.0 supported?"><%=M.getUSB3_supported()%></td>
         <td data-label="Motherboard Type"><%=M.getMotherboard_type()%></td>
@@ -200,20 +291,22 @@
     %>
     </tbody>
 </table>
+</div>
 
 <br>
-<br>
-
 
 <button onclick="openCoolers()">Cooling System</button>
 <%--<a>Cooling System Table</a>--%>
-<table id = "CoolingSystem" width="100%" display = "none">
+<div id = "CoolingSystem1" style="display:none">
+    <br>
+<table id = "CoolingSystem" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
         <th scope="col">Cooler Type</th>
         <th scope="col">Radiator Size</th>
         <th scope="col">RGB</th>
@@ -228,10 +321,18 @@
         for (CoolingSystem Cooler : Coolers) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addCooler" value="<%=Cooler.getPartsID()%>"/>
+                <input type="hidden" name="addCoolername" value="<%=Cooler.getPartsName()%>"/>
+                <input type="hidden" name="position" value="14"/>
+                <input type="submit" value="Add" />
+            </form>
+        </td>
+        <td data-label="partsName"><%=Cooler.getPartsName()%></td>
         <td data-label="ratings"><%=Cooler.getRatings()%></td>
         <td data-label="price"><%=Cooler.getPrice()%></td>
         <td data-label="brand"><%=Cooler.getBrand()%></td>
-        <td data-label="partsName"><%=Cooler.getPartsName()%></td>
         <td data-label="cooler type"><%=Cooler.getCooler_type()%></td>
         <td data-label="Radiator Size"><%=Cooler.getRadiator_size()%></td>
         <td data-label="RGB"><%=Cooler.getRGB()%></td>
@@ -242,21 +343,22 @@
     %>
     </tbody>
 </table>
+</div>
 
 <br>
-<br>
-
 
 <button onclick="openMemory()">Memory</button>
-<%--<a>Memory Table</a>--%>
-<table id = "Memory" width="100%" display = "none">
+<div id = "Memory1" style="display:none">
+    <br>
+<table id = "Memory" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
-        <th scope="col">type</th>
+<%--        <th scope="col">type</th>--%>
         <th scope="col">modules</th>
         <th scope="col">RAM_type</th>
     </tr>
@@ -269,11 +371,19 @@
         for (Memory Memory : Memories) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addMemory" value="<%=Memory.getPartsID()%>"/>
+                <input type="hidden" name="addMemoryname" value="<%=Memory.getPartsName()%>"/>
+                <input type="hidden" name="position" value="6"/>
+                <input type="submit" value="Add" />
+            </form>
+        </td>
+        <td data-label="partsName"><%=Memory.getPartsName()%></td>
         <td data-label="ratings"><%=Memory.getRatings()%></td>
         <td data-label="price"><%=Memory.getPrice()%></td>
         <td data-label="brand"><%=Memory.getBrand()%></td>
-        <td data-label="partsName"><%=Memory.getPartsName()%></td>
-        <td data-label="type"><%=Memory.getType()%></td>
+<%--        <td data-label="type"><%=Memory.getType()%></td>--%>
         <td data-label="Modules"><%=Memory.getModules()%></td>
         <td data-label="RAM_type"><%=Memory.getRAM_type()%></td>
     </tr>
@@ -282,21 +392,23 @@
     %>
     </tbody>
 </table>
+</div>
 
-<br>
 <br>
 
 
 <button onclick="openStorage()">Storage</button>
-<%--<a>Storage Table</a>--%>
-<table id = "Storage" width="100%" display = "none">
+<div id = "Storage1" style="display:none">
+    <br>
+<table id = "Storage" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
-        <th scope="col">type</th>
+<%--        <th scope="col">type</th>--%>
         <th scope="col">storage_type</th>
         <th scope="col">capacity</th>
         <th scope="col">interface</th>
@@ -310,11 +422,19 @@
         for (Storage Storage : Storages) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage" value="<%=Storage.getPartsID()%>"/>
+                <input type="hidden" name="addStoragename" value="<%=Storage.getPartsName()%>"/>
+                <input type="hidden" name="position" value="8"/>
+                <input type="submit" value="Add" />
+            </form>
+        </td>
+        <td data-label="partsName"><%=Storage.getPartsName()%></td>
         <td data-label="ratings"><%=Storage.getRatings()%></td>
         <td data-label="price"><%=Storage.getPrice()%></td>
         <td data-label="brand"><%=Storage.getBrand()%></td>
-        <td data-label="partsName"><%=Storage.getPartsName()%></td>
-        <td data-label="type"><%=Storage.getType()%></td>
+<%--        <td data-label="type"><%=Storage.getType()%></td>--%>
         <td data-label="storage_type"><%=Storage.getStorage_type()%></td>
         <td data-label="capacity"><%=Storage.getCapacity()%></td>
         <td data-label="interface"><%=Storage.getInterface()%></td>
@@ -324,21 +444,23 @@
     %>
     </tbody>
 </table>
+</div>
 
-<br>
 <br>
 
 
 <button onclick="openCase()">Cases</button>
-<%--<a>Case Table</a>--%>
-<table id = "ComputerCase" width="100%" display = "none">
+<div id = "ComputerCase1" style="display:none">
+    <br>
+<table id = "ComputerCase" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
-        <th scope="col">type</th>
+<%--        <th scope="col">type</th>--%>
         <th scope="col">Case Type</th>
         <th scope="col">Case Cooler</th>
         <th scope="col">RGB</th>
@@ -353,11 +475,20 @@
         for (ComputerCase Case : Cases) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addCase" value="<%=Case.getPartsID()%>"/>
+                <input type="hidden" name="addCasename" value="<%=Case.getPartsName()%>"/>
+                <input type="hidden" name="position" value="5"/>
+                <input type="submit" value="Add" />
+            </form>
+            </form>
+        </td>
+        <td data-label="partsName"><%=Case.getPartsName()%></td>
         <td data-label="ratings"><%=Case.getRatings()%></td>
         <td data-label="price"><%=Case.getPrice()%></td>
         <td data-label="brand"><%=Case.getBrand()%></td>
-        <td data-label="partsName"><%=Case.getPartsName()%></td>
-        <td data-label="type"><%=Case.getType()%></td>
+<%--        <td data-label="type"><%=Case.getType()%></td>--%>
         <td data-label="case_type"><%=Case.getCase_type()%></td>
         <td data-label="case_cooler"><%=Case.getNumber_of_case_fan()%></td>
         <td data-label="RGB"><%=Case.getRGB()%></td>
@@ -368,21 +499,23 @@
     %>
     </tbody>
 </table>
+</div>
 
-<br>
 <br>
 
 
 <button onclick="openGPU()">Graphic Cards</button>
-<%--<a>GPU Table</a>--%>
-<table id = "GPU" width="100%" display = "none">
+<div id = "GPU1" style="display:none">
+    <br>
+<table id = "GPU" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
-        <th scope="col">type</th>
+<%--        <th scope="col">type</th>--%>
         <th scope="col">Video Card Type</th>
         <th scope="col">Chipset</th>
         <th scope="col">GPU Memory</th>
@@ -399,11 +532,20 @@
         for (GPU GPU : GPUs) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addGPU" value="<%=GPU.getPartsID()%>"/>
+                <input type="hidden" name="addGPUname" value="<%=GPU.getPartsName()%>"/>
+                <input type="hidden" name="position" value="2"/>
+                <input type="submit" value="Add" />
+            </form>
+            </form>
+        </td>
+        <td data-label="partsName"><%=GPU.getPartsName()%></td>
         <td data-label="ratings"><%=GPU.getRatings()%></td>
         <td data-label="price"><%=GPU.getPrice()%></td>
         <td data-label="brand"><%=GPU.getBrand()%></td>
-        <td data-label="partsName"><%=GPU.getPartsName()%></td>
-        <td data-label="type"><%=GPU.getType()%></td>
+<%--        <td data-label="type"><%=GPU.getType()%></td>--%>
         <td data-label="GPU_type"><%=GPU.getGPU_type()%></td>
         <td data-label="chipset"><%=GPU.getChipset()%></td>
         <td data-label="GPU_memory"><%=GPU.getGPU_memory()%></td>
@@ -416,20 +558,22 @@
     %>
     </tbody>
 </table>
+</div>
 
-<br>
 <br>
 
 <button onclick="openPS()">Power Supply</button>
-<%--<a>PowerSupply Table</a>--%>
-<table id = "PowerSupply" width="100%">
+<div id = "PowerSupply1" style="display:none">
+    <br>
+<table id = "PowerSupply" width="100%" style="text-align:center">
     <thead>
     <tr>
+        <th scope="col">check</th>
+        <th scope="col">partsName</th>
         <th scope="col">ratings</th>
         <th scope="col">price</th>
         <th scope="col">brand</th>
-        <th scope="col">partsName</th>
-        <th scope="col">type</th>
+<%--        <th scope="col">type</th>--%>
         <th scope="col">Wattage</th>
     </tr>
     </thead>
@@ -441,11 +585,20 @@
         for (PowerSupply PS : PSs) {
     %>
     <tr>
+        <td data-label="choice">
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addPS" value="<%=PS.getPartsID()%>"/>
+                <input type="hidden" name="addPSname" value="<%=PS.getPartsName()%>"/>
+                <input type="hidden" name="position" value="15"/>
+                <input type="submit" value="Add" />
+            </form>
+            </form>
+        </td>
+        <td data-label="partsName"><%=PS.getPartsName()%></td>
         <td data-label="ratings"><%=PS.getRatings()%></td>
         <td data-label="price"><%=PS.getPrice()%></td>
         <td data-label="brand"><%=PS.getBrand()%></td>
-        <td data-label="partsName"><%=PS.getPartsName()%></td>
-        <td data-label="type"><%=PS.getType()%></td>
+<%--        <td data-label="type"><%=PS.getType()%></td>--%>
         <td data-label="Wattage"><%=PS.getWattage()%></td>
     </tr>
     <%
@@ -453,50 +606,246 @@
     %>
     </tbody>
 </table>
-<br>
-<br>
+</div>
 
-    <a>start your own build</a>
-    <form name="link_form" method="post" action="MongoDBServlet">
-        <input type="hidden" name="methodType" id="methodTypeStoring" value="insert"/>
-        <br>
-        <%
-            String username = (String) session.getAttribute("username");
-        %>
-        <input type="hidden" name="username" id="username" value="<%=username%>" />
-        <br>
-        <input type="text" name="CPU" id="CPUID" placeholder="CPUID" />
-        <br>
-        <input type="text" name="GPU" id="GPUID" placeholder="GPUID" />
-        <br>
-        <input type="text" name="GPU2" id="GPUID2" placeholder="GPUID2" />
-        <br>
-        <input type="text" name="Motherboard" id="MotherboardID" placeholder="MotherboardID" />
-        <br>
-        <input type="text" name="ComputerCase" id="ComputerCaseID" placeholder="ComputerCaseID" />
-        <br>
-        <input type="text" name="Memory" id="MemoryID" placeholder="MemoryID" />
-        <br>
-        <input type="text" name="Memory2" id="Memory2ID" placeholder="Memory2ID" />
-        <br>
-        <input type="text" name="Storage" id="StorageID" placeholder="StorageID" />
-        <br>
-        <input type="text" name="Storage2" id="Storage2ID" placeholder="Storage2ID" />
-        <br>
-        <input type="text" name="Storage3" id="Storage3ID" placeholder="Storage3ID" />
-        <br>
-        <input type="text" name="Storage4" id="Storage4ID" placeholder="Storage4ID" />
-        <br>
-        <input type="text" name="Storage5" id="Storage5ID" placeholder="Storage5ID" />
-        <br>
-        <input type="text" name="Storage6" id="Storage6ID" placeholder="Storage6ID" />
-        <br>
-        <input type="text" name="Coolingsystem" id="CoolingsystemID" placeholder="CoolingsystemID" />
-        <br>
-        <input type="text" name="Powersupply" id="PowersupplyID" placeholder="PowersupplyID" />
-        <br>
-        <input type="submit" value="Assemble">
-    </form>
+
+<%
+    String username = (String) session.getAttribute("username");
+%>
+
+<br>
+<h1><%=username%>, Start your own build</h1>
+<table  style="text-align: center; font-size: 20px;">
+    <thead>
+    <tr>
+        <th scope="col" style="text-align: center; font-size: 24px;">Parts Type</th>
+        <th scope="col" style="text-align: center; font-size: 24px;">Added Parts Name</th>
+        <th scope="col" style="text-align: center; font-size: 24px;">Delete</th>
+    </tr>
+    <br>
+    </thead>
+    <tbody>
+    <tr>
+        <th scope="col"><br></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    <tr>
+        <th scope="col"><br></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    <tr>
+        <th>CPU</th>
+        <th><%=addedCPUname%></th>
+        <th>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addCPU" value="-1"/>
+                <input type="hidden" name="addCPUname" value=""/>
+                <input type="hidden" name="position" value="1"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </th>
+    </tr>
+    <tr>
+        <th>Motherboard</th>
+        <th><%=addedMBname%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addMB" value="-1"/>
+                <input type="hidden" name="addMBname" value=""/>
+                <input type="hidden" name="position" value="4"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Cooler</th>
+        <th><%=addedCoolername%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addCooler" value="-1"/>
+                <input type="hidden" name="addCoolername" value=""/>
+                <input type="hidden" name="position" value="14"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Memory</th>
+        <th><%=addedMemoryname%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addMemory1" value="-1"/>
+                <input type="hidden" name="addMemory1name" value=""/>
+                <input type="hidden" name="position" value="6"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Memory</th>
+        <th><%=addedMemory2name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addMemory2" value="-1"/>
+                <input type="hidden" name="addMemory2name" value=""/>
+                <input type="hidden" name="position" value="7"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Storage</th>
+        <th><%=addedStoragename%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage1" value="-1"/>
+                <input type="hidden" name="addStorage1name" value=""/>
+                <input type="hidden" name="position" value="8"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Storage</th>
+        <th><%=addedStorage2name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage2" value="-1"/>
+                <input type="hidden" name="addStorage2name" value=""/>
+                <input type="hidden" name="position" value="9"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Storage</th>
+        <th><%=addedStorage3name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage3" value="-1"/>
+                <input type="hidden" name="addStorage3name" value=""/>
+                <input type="hidden" name="position" value="10"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Storage</th>
+        <th><%=addedStorage4name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage4" value="-1"/>
+                <input type="hidden" name="addStorage4name" value=""/>
+                <input type="hidden" name="position" value="11"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Storage</th>
+        <th><%=addedStorage5name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage5" value="-1"/>
+                <input type="hidden" name="addStorage5name" value=""/>
+                <input type="hidden" name="position" value="12"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Storage</th>
+        <th><%=addedStorage6name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addStorage6" value="-1"/>
+                <input type="hidden" name="addStorage6name" value=""/>
+                <input type="hidden" name="position" value="13"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Case</th>
+        <th><%=addedCasename%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addCase" value="-1"/>
+                <input type="hidden" name="addCasename" value=""/>
+                <input type="hidden" name="position" value="5"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Video Card</th>
+        <th><%=addedGPUname%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addGPU1" value="-1"/>
+                <input type="hidden" name="addGPU1name" value=""/>
+                <input type="hidden" name="position" value="2"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Second Video Card</th>
+        <th><%=addedGPU2name%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addGPU2" value="-1"/>
+                <input type="hidden" name="addGPU2name" value=""/>
+                <input type="hidden" name="position" value="3"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th>Power Supply</th>
+        <th><%=addedPSname%></th>
+        <td>
+            <form action="tempSave.jsp" method="POST">
+                <input type="hidden" name="addPS" value="-1"/>
+                <input type="hidden" name="addPSname" value=""/>
+                <input type="hidden" name="position" value="15"/>
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<form name="link_form" method="post" action="MongoDBServlet">
+
+    <input type="hidden" name="methodType" id="methodTypeStoring" value="insert"/>
+    <input type="hidden" name="username" id="user name" value="<%=username%>" />
+    <input type="hidden" name="CPU" id="CPUID" value="<%=addedCPU%>" />
+    <input type="hidden" name="GPU" id="GPUID" value="<%=addedGPU%>" />
+    <input type="hidden" name="GPU2" id="GPUID2" value="<%=addedGPU2%>" />
+    <input type="hidden" name="Motherboard" id="MotherboardID" value="<%=addedMB%>" />
+    <input type="hidden" name="ComputerCase" id="ComputerCaseID" value="<%=addedCase%>" />
+    <input type="hidden" name="Memory" id="MemoryID" value="<%=addedMemory%>" />
+    <input type="hidden" name="Memory2" id="Memory2ID" value="<%=addedMemory2%>" />
+    <input type="hidden" name="Storage" id="StorageID" value="<%=addedStorage%>" />
+    <input type="hidden" name="Storage2" id="Storage2ID" value="<%=addedStorage2%>" />
+    <input type="hidden" name="Storage3" id="Storage3ID" value="<%=addedStorage3%>" />
+    <input type="hidden" name="Storage4" id="Storage4ID" value="<%=addedStorage4%>" />
+    <input type="hidden" name="Storage5" id="Storage5ID" value="<%=addedStorage5%>" />
+    <input type="hidden" name="Storage6" id="Storage6ID" value="<%=addedCPU%>" />
+    <input type="hidden" name="Coolingsystem" id="CoolingsystemID" value="<%=addedCooler%>" />
+    <input type="hidden" name="Powersupply" id="PowersupplyID" value="<%=addedPS%>" />
+    <br>
+    <input type="submit" value="Assemble">
+
+
+
+
+</form>
 
 
 <%--<script src="assets/js/Datatable.js"></script>--%>

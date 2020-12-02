@@ -4,7 +4,6 @@ public class Motherboard extends Parts{
     private String compatible_socket;
     private String PCIe_version;
     private int number_of_PCIe_X1;
-    private int power_consumption;
     private String USB3_supported;
     private int number_of_m2;
     private String Motherboard_type;
@@ -30,12 +29,6 @@ public class Motherboard extends Parts{
     }
 
     public void setNumber_of_PCIe_X1(int number_of_PCIe_X1) { this.number_of_PCIe_X1 = number_of_PCIe_X1; }
-
-    public int getPower_consumption() {
-        return power_consumption;
-    }
-
-    public void setPower_consumption(int power_consumption) { this.power_consumption = power_consumption; }
 
     public String getUSB3_supported() {
         return USB3_supported;
