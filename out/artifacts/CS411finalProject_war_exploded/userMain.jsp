@@ -27,8 +27,10 @@
     Browse the parts,
     <input type="submit" value="Start on your own Build">
 </form>
+<form name="link_form" method="post" action="userhistory.jsp">
+    <input type="submit" value="See History">
+</form>
 
-<a href="dbmanagePage/cards.html">test</a>
 <!-- Footer -->
 <footer id="footer">
     <ul class="icons">

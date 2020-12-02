@@ -35,6 +35,7 @@ public class StorageDAO {
                 part.setCapacity(rs.getInt("capacity"));
                 part.setInterface(rs.getString("interface"));
                 part.setStorage_type(rs.getString("storage_type"));
+                part.setPrice_per_GB(rs.getFloat("price_per_gb"));
                 list.add(part);
             }
             return list;

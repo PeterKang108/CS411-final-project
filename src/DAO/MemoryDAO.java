@@ -34,6 +34,7 @@ public class MemoryDAO {
                 part.setType(rs.getString("type"));
                 part.setModules(rs.getString("modules"));
                 part.setRAM_type(rs.getString("RAM_type"));
+                part.setPrice_per_GB(rs.getFloat("price_per_gb"));
                 list.add(part);
             }
             return list;
