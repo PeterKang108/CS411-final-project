@@ -41,6 +41,14 @@
     <tbody>
     <%
         String username = (String) session.getAttribute("username");
+        session.setAttribute("username", username);
+        if (username == null) {
+    %>
+
+    <jsp:forward page="index.jsp"></jsp:forward>
+
+    <%
+        }
         MongoDAO daoHistory = new MongoDAO();
         CPUDAO daoCPU = new CPUDAO();
         GPUDAO daoGPU = new GPUDAO();
@@ -112,27 +120,28 @@
 
 
         <td align="center">
-            <form action="userhistory.jsp" method="POST">
-                <%
+
+
+                <button onclick="<%
+
                 Map<String, String> toHistory = new HashMap<String, String>();
-                h.getCPU();
-                h.getGPU();
-                h.getGPU2();
-                h.getMotherboard();
-                h.getCoolingsystem();
-                h.getMemory();
-                h.getMemory2();
-                h.getStorage();
-                h.getStorage2();
-                h.getStorage3();
-                h.getStorage4();
-                h.getStorage5();
-                h.getStorage6();
-                h.getComputerCase();
-                h.getPowersupply();
-                %>
-                <input type="submit" value="Add" />
-            </form>
+                toHistory.put("CPU", Integer.toString(h.getCPU()));
+                toHistory.put("GPU", Integer.toString(h.getGPU()));
+                toHistory.put("GPU2", Integer.toString(h.getGPU2()));
+                toHistory.put("Motherboard", Integer.toString(h.getMotherboard()));
+                toHistory.put("Coolingsystem", Integer.toString(h.getCoolingsystem()));
+                toHistory.put("Memory", Integer.toString( h.getMemory()));
+                toHistory.put("Memory2", Integer.toString(h.getMemory2()));
+                toHistory.put("Storage", Integer.toString(h.getStorage()));
+                toHistory.put("Storage2", Integer.toString(h.getStorage2()));
+                toHistory.put("Storage3", Integer.toString(h.getStorage3()));
+                toHistory.put("Storage4", Integer.toString(h.getStorage4()));
+                toHistory.put("Storage5", Integer.toString(h.getStorage5()));
+                toHistory.put("Storage6", Integer.toString(h.getStorage6()));
+                toHistory.put("ComputerCase", Integer.toString(h.getComputerCase()));
+                toHistory.put("Powersupply", Integer.toString(h.getPowersupply()));
+
+                daoHistory.insertDocument(toHistory, username);%>">Insert</button>
         </td>
 
 

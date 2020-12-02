@@ -55,4 +55,13 @@
         <servlet-name>InsertPartServlet</servlet-name>
         <url-pattern>/InsertPartServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SignupServlet</servlet-name>
+        <servlet-class>Servlet.SignupServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SignupServlet</servlet-name>
+        <url-pattern>/SignupServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
