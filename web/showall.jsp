@@ -220,7 +220,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="data-tables">
-                                <table id="dataTable" class="text-center">
+                                <table id="CPU" class="text-center">
                                     <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">PartsID</th>

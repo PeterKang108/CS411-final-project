@@ -127,7 +127,7 @@ public class MongoDBServlet extends HttpServlet {
             map.put("Powersupply", Powersupply);
         }
         dao.insertDocument(map, user);
-        request.getRequestDispatcher("userShowall.jsp").forward(request, response);
+        request.getRequestDispatcher("userhistory.jsp").forward(request, response);
 
 
     }

@@ -615,6 +615,7 @@
 
 <br>
 <h1><%=username%>, Start your own build</h1>
+<h1><%=(String)session.getAttribute("error")%></h1>
 <table  style="text-align: center; font-size: 20px;">
     <thead>
     <tr>
@@ -820,7 +821,7 @@
 
 
 
-<form name="link_form" method="post" action="MongoDBServlet">
+<form name="link_form" method="post" action="checkOnSubmit.jsp">
 
     <input type="hidden" name="methodType" id="methodTypeStoring" value="insert"/>
     <input type="hidden" name="username" id="user name" value="<%=username%>" />
@@ -836,15 +837,11 @@
     <input type="hidden" name="Storage3" id="Storage3ID" value="<%=addedStorage3%>" />
     <input type="hidden" name="Storage4" id="Storage4ID" value="<%=addedStorage4%>" />
     <input type="hidden" name="Storage5" id="Storage5ID" value="<%=addedStorage5%>" />
-    <input type="hidden" name="Storage6" id="Storage6ID" value="<%=addedCPU%>" />
+    <input type="hidden" name="Storage6" id="Storage6ID" value="<%=addedStorage6%>" />
     <input type="hidden" name="Coolingsystem" id="CoolingsystemID" value="<%=addedCooler%>" />
     <input type="hidden" name="Powersupply" id="PowersupplyID" value="<%=addedPS%>" />
     <br>
     <input type="submit" value="Assemble">
-
-
-
-
 </form>
 
 

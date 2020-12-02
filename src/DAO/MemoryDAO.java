@@ -68,7 +68,7 @@ public class MemoryDAO {
         }
     }
 
-    public Memory getSepcialMemory(int partsID)
+    public Memory getSpecialMemory(int partsID)
     {
         Connection conn = null;
         PreparedStatement stmt = null;

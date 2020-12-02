@@ -76,6 +76,7 @@ public class AdvanceDAO {
                 StorageID.add(m.getStorage6());
             }
         }
+
         double totalp = 0.0;
         PartsAttribute cpuPart = sqlCPU(CPUID);
         if(cpuPart.getBrand() != null){
@@ -144,11 +145,6 @@ public class AdvanceDAO {
             }
         }
         return toReturn;
-
-
-
-
-
     }
 
     public PartsAttribute sqlCPU(ArrayList<Integer> CPUID){
