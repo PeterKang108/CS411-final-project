@@ -48,7 +48,7 @@
         </td>
         <td data-label="Motherboard" align="center"><%=h.getMotherboard()%>
         </td>
-        <td data-label="Case" align="center"><%=h.getComputerCase()%>W
+        <td data-label="Case" align="center"><%=h.getComputerCase()%>
         </td>
         <td data-label="Memory" align="center"><%=h.getMemory()%>
         </td>

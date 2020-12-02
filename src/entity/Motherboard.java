@@ -5,6 +5,10 @@ public class Motherboard extends Parts{
     private String PCIe_version;
     private int number_of_PCIe_X1;
     private String USB3_supported;
+
+
+
+    private String RGB;
     private int number_of_m2;
     private String Motherboard_type;
 
@@ -36,6 +40,14 @@ public class Motherboard extends Parts{
 
     public void setUSB3_supported(String USB3_supported) {
         this.USB3_supported = USB3_supported;
+    }
+
+    public String getRGB() {
+        return RGB;
+    }
+
+    public void setRGB(String RGB) {
+        this.RGB = RGB;
     }
 
     public int getNumber_of_m2() {

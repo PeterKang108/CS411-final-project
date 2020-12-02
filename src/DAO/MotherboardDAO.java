@@ -37,6 +37,7 @@ public class MotherboardDAO {
                 part.setNumber_of_m2(rs.getInt("number_of_m.2"));
                 part.setPCIe_version(rs.getString("PCIe_version"));
                 part.setNumber_of_PCIe_X1(rs.getInt("number_of_PCIe_X1"));
+                part.setRGB(rs.getString("RGB"));
                 part.setUSB3_supported(rs.getString("USB3.0_supported"));
 
                 list.add(part);
