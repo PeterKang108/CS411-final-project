@@ -59,12 +59,12 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
                                 <li><a href="showallStorage.jsp">Storage</a></li>
-                                <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
+                                <li class="active"><a href="showallCoolingSystem.jsp">Cooler</a></li>
                                 <li><a href="showallComputercase.jsp">Case</a></li>
                                 <li><a href="showallPowerSupply.jsp">Power Supply</a></li>
                             </ul>
@@ -142,6 +142,7 @@
                                         <th scope="col">Radiator Size</th>
                                         <th scope="col">RGB</th>
                                         <th scope="col">Compatible Socket</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -162,6 +163,7 @@
                                         <td data-label="Radiator Size"><%=Cooler.getRadiator_size()%></td>
                                         <td data-label="RGB"><%=Cooler.getRGB()%></td>
                                         <td data-label="Compatible Socket"><%=Cooler.getCompatible_socket()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=Cooler.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }

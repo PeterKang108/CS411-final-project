@@ -46,4 +46,13 @@
         <servlet-name>MongoDBServlet</servlet-name>
         <url-pattern>/MongoDBServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InsertPartServlet</servlet-name>
+        <servlet-class>Servlet.InsertPartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InsertPartServlet</servlet-name>
+        <url-pattern>/InsertPartServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

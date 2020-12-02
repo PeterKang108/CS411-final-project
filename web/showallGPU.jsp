@@ -59,8 +59,8 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
-                                <li><a href="showallGPU.jsp">GPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li class="active"><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
                                 <li><a href="showallStorage.jsp">Storage</a></li>
@@ -145,6 +145,7 @@
                                         <th scope="col">Power Consumption</th>
                                         <th scope="col">Interface</th>
                                         <th scope="col">RGB</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -167,6 +168,7 @@
                                         <td data-label="PowerConsumption"><%=GPU.getPower_consumption()%></td>
                                         <td data-label="interface_type"><%=GPU.getInterface_type()%></td>
                                         <td data-label="RGB"><%=GPU.getRGB()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=GPU.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }

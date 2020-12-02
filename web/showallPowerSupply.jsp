@@ -59,14 +59,14 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
                                 <li><a href="showallStorage.jsp">Storage</a></li>
                                 <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
                                 <li><a href="showallComputercase.jsp">Case</a></li>
-                                <li><a href="showallPowerSupply.jsp">Power Supply</a></li>
+                                <li class="active"><a href="showallPowerSupply.jsp">Power Supply</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -140,6 +140,7 @@
                                         <th scope="col">brand</th>
                                         <%--        <th scope="col">type</th>--%>
                                         <th scope="col">Wattage</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -157,6 +158,7 @@
                                         <td data-label="brand"><%=PS.getBrand()%></td>
                                         <%--        <td data-label="type"><%=PS.getType()%></td>--%>
                                         <td data-label="Wattage"><%=PS.getWattage()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=PS.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }

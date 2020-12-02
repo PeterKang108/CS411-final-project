@@ -8,6 +8,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="DAO.*" %>
 <%@ page import="entity.*" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" autoFlush="false" buffer="300kb"%>
 <html>
 <head>
@@ -111,6 +113,24 @@
 
         <td align="center">
             <form action="userhistory.jsp" method="POST">
+                <%
+                Map<String, String> toHistory = new HashMap<String, String>();
+                h.getCPU();
+                h.getGPU();
+                h.getGPU2();
+                h.getMotherboard();
+                h.getCoolingsystem();
+                h.getMemory();
+                h.getMemory2();
+                h.getStorage();
+                h.getStorage2();
+                h.getStorage3();
+                h.getStorage4();
+                h.getStorage5();
+                h.getStorage6();
+                h.getComputerCase();
+                h.getPowersupply();
+                %>
                 <input type="submit" value="Add" />
             </form>
         </td>

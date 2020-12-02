@@ -142,7 +142,6 @@
                                         <th scope="col">Compatible Socket</th>
                                         <th scope="col">Integrated Graphics</th>
                                         <th scope="col">Delete</th>
-                                        <th scope="col">Insert</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -169,10 +168,6 @@
                                         <td data-label="Integrated Graphics" align="center"><%=cpu.getIntegrated_graphics()%>
                                         </td>
                                         <td><a class="ti-trash" href="DeleteServlet?id=<%=cpu.getPartsID() %>"></a></td>
-                                        <td>
-                                            <form method="post" action="InsertPartServlet">
-                                            </form>
-                                        </td>
                                     </tr>
                                     <%
                                         }

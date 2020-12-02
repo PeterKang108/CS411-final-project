@@ -59,11 +59,11 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
-                                <li><a href="showallStorage.jsp">Storage</a></li>
+                                <li class="active"><a href="showallStorage.jsp">Storage</a></li>
                                 <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
                                 <li><a href="showallComputercase.jsp">Case</a></li>
                                 <li><a href="showallPowerSupply.jsp">Power Supply</a></li>
@@ -142,6 +142,7 @@
                                         <th scope="col">storage_type</th>
                                         <th scope="col">capacity</th>
                                         <th scope="col">interface</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -161,6 +162,7 @@
                                         <td data-label="storage_type"><%=Storage.getStorage_type()%></td>
                                         <td data-label="capacity"><%=Storage.getCapacity()%></td>
                                         <td data-label="interface"><%=Storage.getInterface()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=Storage.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }

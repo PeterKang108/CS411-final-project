@@ -32,14 +32,14 @@
   <input type="submit" value="Sign In">
 </form>
 
-<form name="link_form" method="post" action="userMain.jsp">
-  <input type="submit" value="jump to userpage">
+<%--<form name="link_form" method="post" action="userMain.jsp">--%>
+<%--  <input type="submit" value="jump to userpage">--%>
+<%--</form>--%>
+<%--&lt;%&ndash;<form name="link_form" method="post" action="showall.jsp">&ndash;%&gt;--%>
+<%--&lt;%&ndash;  <input type="submit" value="show all in database">&ndash;%&gt;--%>
 </form>
-<%--<form name="link_form" method="post" action="showall.jsp">--%>
-<%--  <input type="submit" value="show all in database">--%>
-</form>
-<form name="link_form" method="post" action="showall.jsp">
-  <input type="submit" value="show information of all parts">
+<form name="link_form" method="post" action="signup.jsp">
+  <input type="submit" value="Sign Up">
 </form>
 
 <!-- Footer -->

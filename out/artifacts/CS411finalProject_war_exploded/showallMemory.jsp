@@ -59,10 +59,10 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
-                                <li><a href="showallMemory.jsp">Memory</a></li>
+                                <li class="active"><a href="showallMemory.jsp">Memory</a></li>
                                 <li><a href="showallStorage.jsp">Storage</a></li>
                                 <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
                                 <li><a href="showallComputercase.jsp">Case</a></li>
@@ -141,6 +141,7 @@
                                         <%--        <th scope="col">type</th>--%>
                                         <th scope="col">modules</th>
                                         <th scope="col">RAM_type</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -159,6 +160,7 @@
                                         <%--        <td data-label="type"><%=Memory.getType()%></td>--%>
                                         <td data-label="Modules"><%=Memory.getModules()%></td>
                                         <td data-label="RAM_type"><%=Memory.getRAM_type()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=Memory.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }
@@ -180,7 +182,7 @@
     <!-- footer area start-->
     <footer>
         <div class="footer-area">
-            <p><a href="${pageContext.request.contextPath}/insertnew.jsp">insert</a><br></p>
+            <p><a href="${pageContext.request.contextPath}/insertMemory.jsp">insert</a><br></p>
             <p><a href="${pageContext.request.contextPath}/index.jsp">back</a></p>
         </div>
     </footer>

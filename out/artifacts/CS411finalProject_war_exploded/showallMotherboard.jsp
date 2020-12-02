@@ -59,9 +59,9 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
-                                <li><a href="showallMotherboard.jsp">Motherboard</a></li>
+                                <li class="active"><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
                                 <li><a href="showallStorage.jsp">Storage</a></li>
                                 <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
@@ -143,6 +143,7 @@
                                         <th scope="col">USB 3.0 Support?</th>
                                         <th scope="col">Number of M.2 port</th>
                                         <th scope="col">size</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -163,6 +164,7 @@
                                         <td data-label="Number of m.2"><%=M.getNumber_of_m2()%></td>
                                         <td data-label="USB3.0 supported?"><%=M.getUSB3_supported()%></td>
                                         <td data-label="Motherboard Type"><%=M.getMotherboard_type()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=M.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }
@@ -184,7 +186,7 @@
     <!-- footer area start-->
     <footer>
         <div class="footer-area">
-            <p><a href="${pageContext.request.contextPath}/insertnew.jsp">insert</a><br></p>
+            <p><a href="${pageContext.request.contextPath}/insertMotherboard.jsp">insert</a><br></p>
             <p><a href="${pageContext.request.contextPath}/index.jsp">back</a></p>
         </div>
     </footer>

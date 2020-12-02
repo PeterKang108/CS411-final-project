@@ -59,13 +59,13 @@
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
                                 <li><a href="showall.jsp">table layout</a></li>
-                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
                                 <li><a href="showallStorage.jsp">Storage</a></li>
                                 <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
-                                <li><a href="showallComputercase.jsp">Case</a></li>
+                                <li class="active"><a href="showallComputercase.jsp">Case</a></li>
                                 <li><a href="showallPowerSupply.jsp">Power Supply</a></li>
                             </ul>
                         </li>
@@ -143,6 +143,7 @@
                                         <th scope="col">Case Cooler</th>
                                         <th scope="col">RGB</th>
                                         <th scope="col">Side Panel</th>
+                                        <th scope="col">Delete</th>
                                     </tr>
                                     </thead>
 
@@ -164,6 +165,7 @@
                                         <td data-label="case_cooler"><%=Case.getNumber_of_case_fan()%></td>
                                         <td data-label="RGB"><%=Case.getRGB()%></td>
                                         <td data-label="side_panel"><%=Case.getSide_panel()%></td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=Case.getPartsID() %>"></a></td>
                                     </tr>
                                     <%
                                         }
@@ -185,7 +187,7 @@
     <!-- footer area start-->
     <footer>
         <div class="footer-area">
-            <p><a href="${pageContext.request.contextPath}/insertnew.jsp">insert</a><br></p>
+            <p><a href="${pageContext.request.contextPath}/insertComputerCase.jsp">insert</a><br></p>
             <p><a href="${pageContext.request.contextPath}/index.jsp">back</a></p>
         </div>
     </footer>
