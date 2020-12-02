@@ -58,8 +58,8 @@
                                 <span>Tables</span></a>
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
-                                <li class="active"><a href="showall.jsp">table layout</a></li>
-                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showall.jsp">table layout</a></li>
+                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
@@ -131,41 +131,38 @@
                         <div class="card-body">
                             <div class="data-tables">
                                 <table id="CPU" class="text-center">
-                                    <thead class="text-uppercase">
+                                    <thead>
                                     <tr>
-                                        <th scope="col">PartsID</th>
+                                        <th scope="col">partsName</th>
                                         <th scope="col">ratings</th>
                                         <th scope="col">price</th>
                                         <th scope="col">brand</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">type</th>
-                                        <th scope="col">delete</th>
-                                        <th scope="col">update</th>
+                                        <th scope="col">Compatible Socket</th>
+                                        <th scope="col">PCIe Version</th>
+                                        <th scope="col">Number of PCIe X1 port</th>
+                                        <th scope="col">USB 3.0 Support?</th>
+                                        <th scope="col">Number of M.2 port</th>
+                                        <th scope="col">size</th>
                                     </tr>
                                     </thead>
+
                                     <tbody>
                                     <%
-                                        PartsDAO dao = new  PartsDAO();
-                                        ArrayList<Parts> parts = dao.getAllParts();
-                                        for (Parts part : parts) {
+                                        MotherboardDAO daoMB = new MotherboardDAO();
+                                        ArrayList<Motherboard> Motherboards = daoMB.getAllMotherboard();
+                                        for (Motherboard M : Motherboards) {
                                     %>
                                     <tr>
-                                        <th data-label="PartsID"><%=part.getPartsID() %>
-                                        </th>
-                                        <td data-label="ratings"><%=part.getRatings()%>
-                                        </td>
-                                        <td data-label="price"><%=part.getPrice()%>
-                                        </td>
-                                        <td data-label="brand"><%=part.getBrand()%>
-                                        </td>
-                                        <td data-label="partsName"><%=part.getPartsName()%>
-                                        </td>
-                                        <td data-label="type"><%=part.getType()%>
-                                        </td>
-                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></a></td>
-                                        <td>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
-                                        </td>
+                                        <td data-label="partsName"><%=M.getPartsName()%></td>
+                                        <td data-label="ratings"><%=M.getRatings()%></td>
+                                        <td data-label="price"><%=M.getPrice()%></td>
+                                        <td data-label="brand"><%=M.getBrand()%></td>
+                                        <td data-label="Compatible Socket"><%=M.getCompatible_socket()%></td>
+                                        <td data-label="PCIe_version"><%=M.getPCIe_version()%></td>
+                                        <td data-label="number_of_PCIe_X1"><%=M.getNumber_of_PCIe_X1()%></td>
+                                        <td data-label="Number of m.2"><%=M.getNumber_of_m2()%></td>
+                                        <td data-label="USB3.0 supported?"><%=M.getUSB3_supported()%></td>
+                                        <td data-label="Motherboard Type"><%=M.getMotherboard_type()%></td>
                                     </tr>
                                     <%
                                         }

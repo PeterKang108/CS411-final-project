@@ -58,8 +58,8 @@
                                 <span>Tables</span></a>
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
-                                <li class="active"><a href="showall.jsp">table layout</a></li>
-                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showall.jsp">table layout</a></li>
+                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
@@ -131,41 +131,37 @@
                         <div class="card-body">
                             <div class="data-tables">
                                 <table id="CPU" class="text-center">
-                                    <thead class="text-uppercase">
+                                    <thead>
                                     <tr>
                                         <th scope="col">PartsID</th>
+                                        <th scope="col">partsName</th>
                                         <th scope="col">ratings</th>
                                         <th scope="col">price</th>
                                         <th scope="col">brand</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">type</th>
-                                        <th scope="col">delete</th>
-                                        <th scope="col">update</th>
+                                        <th scope="col">Cooler Type</th>
+                                        <th scope="col">Radiator Size</th>
+                                        <th scope="col">RGB</th>
+                                        <th scope="col">Compatible Socket</th>
                                     </tr>
                                     </thead>
+
                                     <tbody>
                                     <%
-                                        PartsDAO dao = new  PartsDAO();
-                                        ArrayList<Parts> parts = dao.getAllParts();
-                                        for (Parts part : parts) {
+                                        CoolingSystemDAO daoCoolingSystem = new CoolingSystemDAO();
+                                        ArrayList<CoolingSystem> Coolers = daoCoolingSystem.getAllCoolingSystem();
+                                        for (CoolingSystem Cooler : Coolers) {
                                     %>
                                     <tr>
-                                        <th data-label="PartsID"><%=part.getPartsID() %>
-                                        </th>
-                                        <td data-label="ratings"><%=part.getRatings()%>
+                                        <td data-label="choice"><%=Cooler.getPartsID()%>
                                         </td>
-                                        <td data-label="price"><%=part.getPrice()%>
-                                        </td>
-                                        <td data-label="brand"><%=part.getBrand()%>
-                                        </td>
-                                        <td data-label="partsName"><%=part.getPartsName()%>
-                                        </td>
-                                        <td data-label="type"><%=part.getType()%>
-                                        </td>
-                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></a></td>
-                                        <td>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
-                                        </td>
+                                        <td data-label="partsName"><%=Cooler.getPartsName()%></td>
+                                        <td data-label="ratings"><%=Cooler.getRatings()%></td>
+                                        <td data-label="price"><%=Cooler.getPrice()%></td>
+                                        <td data-label="brand"><%=Cooler.getBrand()%></td>
+                                        <td data-label="cooler type"><%=Cooler.getCooler_type()%></td>
+                                        <td data-label="Radiator Size"><%=Cooler.getRadiator_size()%></td>
+                                        <td data-label="RGB"><%=Cooler.getRGB()%></td>
+                                        <td data-label="Compatible Socket"><%=Cooler.getCompatible_socket()%></td>
                                     </tr>
                                     <%
                                         }

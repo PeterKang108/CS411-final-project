@@ -58,8 +58,8 @@
                                 <span>Tables</span></a>
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
-                                <li class="active"><a href="showall.jsp">table layout</a></li>
-                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showall.jsp">table layout</a></li>
+                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
@@ -131,41 +131,36 @@
                         <div class="card-body">
                             <div class="data-tables">
                                 <table id="CPU" class="text-center">
-                                    <thead class="text-uppercase">
+                                    <thead>
                                     <tr>
                                         <th scope="col">PartsID</th>
+                                        <th scope="col">partsName</th>
                                         <th scope="col">ratings</th>
                                         <th scope="col">price</th>
                                         <th scope="col">brand</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">type</th>
-                                        <th scope="col">delete</th>
-                                        <th scope="col">update</th>
+                                        <%--        <th scope="col">type</th>--%>
+                                        <th scope="col">storage_type</th>
+                                        <th scope="col">capacity</th>
+                                        <th scope="col">interface</th>
                                     </tr>
                                     </thead>
+
                                     <tbody>
                                     <%
-                                        PartsDAO dao = new  PartsDAO();
-                                        ArrayList<Parts> parts = dao.getAllParts();
-                                        for (Parts part : parts) {
+                                        StorageDAO daoStorage = new  StorageDAO();
+                                        ArrayList<Storage> Storages = daoStorage.getAllStorage();
+                                        for (Storage Storage : Storages) {
                                     %>
                                     <tr>
-                                        <th data-label="PartsID"><%=part.getPartsID() %>
-                                        </th>
-                                        <td data-label="ratings"><%=part.getRatings()%>
-                                        </td>
-                                        <td data-label="price"><%=part.getPrice()%>
-                                        </td>
-                                        <td data-label="brand"><%=part.getBrand()%>
-                                        </td>
-                                        <td data-label="partsName"><%=part.getPartsName()%>
-                                        </td>
-                                        <td data-label="type"><%=part.getType()%>
-                                        </td>
-                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></a></td>
-                                        <td>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
-                                        </td>
+                                        <td data-label="choice"><%=Storage.getPartsID()%></td>
+                                        <td data-label="partsName"><%=Storage.getPartsName()%></td>
+                                        <td data-label="ratings"><%=Storage.getRatings()%></td>
+                                        <td data-label="price"><%=Storage.getPrice()%></td>
+                                        <td data-label="brand"><%=Storage.getBrand()%></td>
+                                        <%--        <td data-label="type"><%=Storage.getType()%></td>--%>
+                                        <td data-label="storage_type"><%=Storage.getStorage_type()%></td>
+                                        <td data-label="capacity"><%=Storage.getCapacity()%></td>
+                                        <td data-label="interface"><%=Storage.getInterface()%></td>
                                     </tr>
                                     <%
                                         }

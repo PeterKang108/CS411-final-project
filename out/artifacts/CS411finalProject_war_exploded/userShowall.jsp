@@ -482,7 +482,6 @@
                 <input type="hidden" name="position" value="5"/>
                 <input type="submit" value="Add" />
             </form>
-            </form>
         </td>
         <td data-label="partsName"><%=Case.getPartsName()%></td>
         <td data-label="ratings"><%=Case.getRatings()%></td>
@@ -539,7 +538,6 @@
                 <input type="hidden" name="position" value="2"/>
                 <input type="submit" value="Add" />
             </form>
-            </form>
         </td>
         <td data-label="partsName"><%=GPU.getPartsName()%></td>
         <td data-label="ratings"><%=GPU.getRatings()%></td>
@@ -591,7 +589,6 @@
                 <input type="hidden" name="addPSname" value="<%=PS.getPartsName()%>"/>
                 <input type="hidden" name="position" value="15"/>
                 <input type="submit" value="Add" />
-            </form>
             </form>
         </td>
         <td data-label="partsName"><%=PS.getPartsName()%></td>

@@ -58,8 +58,8 @@
                                 <span>Tables</span></a>
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
-                                <li class="active"><a href="showall.jsp">table layout</a></li>
-                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showall.jsp">table layout</a></li>
+                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
@@ -130,48 +130,58 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="data-tables">
+                                <form>
                                 <table id="CPU" class="text-center">
                                     <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">PartsID</th>
+                                        <th scope="col">partsName</th>
+                                        <th scope="col">type</th>
                                         <th scope="col">ratings</th>
                                         <th scope="col">price</th>
                                         <th scope="col">brand</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">type</th>
-                                        <th scope="col">delete</th>
-                                        <th scope="col">update</th>
+                                        <th scope="col">Power Consumption</th>
+                                        <th scope="col">Compatible Socket</th>
+                                        <th scope="col">Integrated Graphics</th>
+                                        <th scope="col">Delete</th>
+                                        <th scope="col">Insert</th>
                                     </tr>
                                     </thead>
+
                                     <tbody>
-                                    <%
-                                        PartsDAO dao = new  PartsDAO();
-                                        ArrayList<Parts> parts = dao.getAllParts();
-                                        for (Parts part : parts) {
-                                    %>
                                     <tr>
-                                        <th data-label="PartsID"><%=part.getPartsID() %>
-                                        </th>
-                                        <td data-label="ratings"><%=part.getRatings()%>
-                                        </td>
-                                        <td data-label="price"><%=part.getPrice()%>
-                                        </td>
-                                        <td data-label="brand"><%=part.getBrand()%>
-                                        </td>
-                                        <td data-label="partsName"><%=part.getPartsName()%>
-                                        </td>
-                                        <td data-label="type"><%=part.getType()%>
-                                        </td>
-                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></a></td>
-                                        <td>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
-                                        </td>
+
+                                        <input type="text" name="PartsID"/>
+
+                                        <input type="text" name="ratings"/>
+
+                                        <input type="text" name="price"/>
+
+                                        <input type="text" name="brand"/>
+
+                                        <input type="text" name="partsName"/>
+
+                                        <input type="text" name="type"/>
+
+                                        <input type="text" name="PowerConsumption"/>
+
+                                        <input type="text" name="ratings"/>
+
+                                        <input type="text" name="price"/>
+
+                                        <input type="text" name="brand"/>
+
+                                        <input type="text" name="partsName"/>
+
+                                        <input type="text" name="type"/>
+
+                                        <input type="submit" value="insert"/>
+
                                     </tr>
-                                    <%
-                                        }
-                                    %>
                                     </tbody>
+
                                 </table>
+                                </form>
                             </div>
                         </div>
                     </div>

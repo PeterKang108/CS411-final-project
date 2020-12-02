@@ -1,7 +1,6 @@
-
-<%@ page import="entity.Parts" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="DAO.PartsDAO" %>
+<%@ page import="DAO.*" %>
+<%@ page import="entity.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" autoFlush="false" buffer="300kb"%>
 
 <html>
@@ -58,9 +57,16 @@
                             <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-table"></i>
                                 <span>Tables</span></a>
                             <ul class="collapse">
-                                <li><a href="dbmanagePage/table-basic.html">basic table</a></li>
-                                <li class="active"><a href="dbmanagePage/table-layout.html">table layout</a></li>
-                                <li><a href="dbmanagePage/datatable.html">datatable</a></li>
+                                <li><a href="dbmanagePage/datatable.html">basic table</a></li>
+                                <li class="active"><a href="showall.jsp">table layout</a></li>
+                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showallGPU.jsp">GPU</a></li>
+                                <li><a href="showallMotherboard.jsp">Motherboard</a></li>
+                                <li><a href="showallMemory.jsp">Memory</a></li>
+                                <li><a href="showallStorage.jsp">Storage</a></li>
+                                <li><a href="showallCoolingSystem.jsp">Cooler</a></li>
+                                <li><a href="showallComputercase.jsp">Case</a></li>
+                                <li><a href="showallPowerSupply.jsp">Power Supply</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -87,51 +93,6 @@
                             <i class="ti-search"></i>
                         </form>
                     </div>
-                </div>
-                <!-- profile info & task notification -->
-                <div class="col-md-6 col-sm-4 clearfix">
-                    <ul class="notification-area pull-right">
-                        <li id="full-view"><i class="ti-fullscreen"></i></li>
-                        <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
-                        <li class="dropdown">
-                            <i class="ti-bell dropdown-toggle" data-toggle="dropdown">
-                                <span>2</span>
-                            </i>
-                            <div class="dropdown-menu bell-notify-box notify-box">
-                                <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
-                                <div class="nofity-list">
-                                    <a href="#" class="notify-item">
-                                        <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
-                                        <div class="notify-text">
-                                            <p>You have Changed Your Password</p>
-                                            <span>Just Now</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="dropdown">
-                            <i class="fa fa-envelope-o dropdown-toggle" data-toggle="dropdown"><span>3</span></i>
-                            <div class="dropdown-menu notify-box nt-enveloper-box">
-                                <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
-                                <div class="nofity-list">
-                                    <a href="#" class="notify-item">
-                                        <div class="notify-thumb">
-                                            <img src="dbmanagePage/assets/images/author/author-img1.jpg" alt="image">
-                                        </div>
-                                        <div class="notify-text">
-                                            <p>Aglae Mayer</p>
-                                            <span class="msg">Hey I am waiting for you...</span>
-                                            <span>3:15 PM</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="settings-btn">
-                            <i class="ti-settings"></i>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -201,13 +162,10 @@
                                         </td>
                                         <td data-label="type"><%=part.getType()%>
                                         </td>
-                                        <td><i class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></i></td>
-                                        <td><a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Id</a>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Ratings</a>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></a></td>
+                                        <td>
                                             <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Brand</a>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Name</a>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Type</a></td>
+                                        </td>
                                     </tr>
                                     <%
                                         }
@@ -229,7 +187,6 @@
     <!-- footer area start-->
     <footer>
         <div class="footer-area">
-            <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
             <p><a href="${pageContext.request.contextPath}/insertnew.jsp">insert</a><br></p>
             <p><a href="${pageContext.request.contextPath}/index.jsp">back</a></p>
         </div>
@@ -238,182 +195,6 @@
 </div>
 <!-- page container area end -->
 <!-- offset area start -->
-<div class="offset-area">
-    <div class="offset-close"><i class="ti-close"></i></div>
-    <ul class="nav offset-menu-tab">
-        <li><a class="active" data-toggle="tab" href="#activity">Activity</a></li>
-        <li><a data-toggle="tab" href="#settings">Settings</a></li>
-    </ul>
-    <div class="offset-content tab-content">
-        <div id="activity" class="tab-pane fade in show active">
-            <div class="recent-activity">
-                <div class="timeline-task">
-                    <div class="icon bg1">
-                        <i class="fa fa-envelope"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Rashed sent you an email</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg2">
-                        <i class="fa fa-check"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Added</h4>
-                        <span class="time"><i class="ti-time"></i>7 Minutes Ago</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg2">
-                        <i class="fa fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>You missed you Password!</h4>
-                        <span class="time"><i class="ti-time"></i>09:20 Am</span>
-                    </div>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg3">
-                        <i class="fa fa-bomb"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Member waiting for you Attention</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg3">
-                        <i class="ti-signal"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>You Added Kaji Patha few minutes ago</h4>
-                        <span class="time"><i class="ti-time"></i>01 minutes ago</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg1">
-                        <i class="fa fa-envelope"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Ratul Hamba sent you an email</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                    <p>Hello sir , where are you, i am egerly waiting for you.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg2">
-                        <i class="fa fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Rashed sent you an email</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg2">
-                        <i class="fa fa-exclamation-triangle"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Rashed sent you an email</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg3">
-                        <i class="fa fa-bomb"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Rashed sent you an email</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                    </p>
-                </div>
-                <div class="timeline-task">
-                    <div class="icon bg3">
-                        <i class="ti-signal"></i>
-                    </div>
-                    <div class="tm-title">
-                        <h4>Rashed sent you an email</h4>
-                        <span class="time"><i class="ti-time"></i>09:35</span>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse distinctio itaque at.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id="settings" class="tab-pane fade">
-            <div class="offset-settings">
-                <h4>General Settings</h4>
-                <div class="settings-list">
-                    <div class="s-settings">
-                        <div class="s-sw-title">
-                            <h5>Notifications</h5>
-                            <div class="s-swtich">
-                                <input type="checkbox" id="switch1" />
-                                <label for="switch1">Toggle</label>
-                            </div>
-                        </div>
-                        <p>Keep it 'On' When you want to get all the notification.</p>
-                    </div>
-                    <div class="s-settings">
-                        <div class="s-sw-title">
-                            <h5>Show recent activity</h5>
-                            <div class="s-swtich">
-                                <input type="checkbox" id="switch2" />
-                                <label for="switch2">Toggle</label>
-                            </div>
-                        </div>
-                        <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
-                    </div>
-                    <div class="s-settings">
-                        <div class="s-sw-title">
-                            <h5>Show your emails</h5>
-                            <div class="s-swtich">
-                                <input type="checkbox" id="switch3" />
-                                <label for="switch3">Toggle</label>
-                            </div>
-                        </div>
-                        <p>Show email so that easily find you.</p>
-                    </div>
-                    <div class="s-settings">
-                        <div class="s-sw-title">
-                            <h5>Show Task statistics</h5>
-                            <div class="s-swtich">
-                                <input type="checkbox" id="switch4" />
-                                <label for="switch4">Toggle</label>
-                            </div>
-                        </div>
-                        <p>The for attribute is necessary to bind our custom checkbox with the input.</p>
-                    </div>
-                    <div class="s-settings">
-                        <div class="s-sw-title">
-                            <h5>Notifications</h5>
-                            <div class="s-swtich">
-                                <input type="checkbox" id="switch5" />
-                                <label for="switch5">Toggle</label>
-                            </div>
-                        </div>
-                        <p>Use checkboxes when looking for yes or no answers.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- offset area end -->
 <!-- jquery latest version -->
 <script src="dbmanagePage/assets/js/vendor/jquery-2.2.4.min.js"></script>

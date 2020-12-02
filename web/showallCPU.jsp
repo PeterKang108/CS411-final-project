@@ -58,8 +58,8 @@
                                 <span>Tables</span></a>
                             <ul class="collapse">
                                 <li><a href="dbmanagePage/datatable.html">basic table</a></li>
-                                <li class="active"><a href="showall.jsp">table layout</a></li>
-                                <li><a href="showallCPU.jsp">CPU</a></li>
+                                <li><a href="showall.jsp">table layout</a></li>
+                                <li class="active"><a href="showallCPU.jsp">CPU</a></li>
                                 <li><a href="showallGPU.jsp">GPU</a></li>
                                 <li><a href="showallMotherboard.jsp">Motherboard</a></li>
                                 <li><a href="showallMemory.jsp">Memory</a></li>
@@ -134,37 +134,44 @@
                                     <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">PartsID</th>
+                                        <th scope="col">partsName</th>
                                         <th scope="col">ratings</th>
                                         <th scope="col">price</th>
                                         <th scope="col">brand</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">type</th>
-                                        <th scope="col">delete</th>
-                                        <th scope="col">update</th>
+                                        <th scope="col">Power Consumption</th>
+                                        <th scope="col">Compatible Socket</th>
+                                        <th scope="col">Integrated Graphics</th>
+                                        <th scope="col">Delete</th>
+                                        <th scope="col">Insert</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <%
-                                        PartsDAO dao = new  PartsDAO();
-                                        ArrayList<Parts> parts = dao.getAllParts();
-                                        for (Parts part : parts) {
+                                        CPUDAO daoCPU = new  CPUDAO();
+                                        ArrayList<CPU> CPUs = daoCPU.getAllCPU();
+                                        for (CPU cpu : CPUs) {
                                     %>
                                     <tr>
-                                        <th data-label="PartsID"><%=part.getPartsID() %>
-                                        </th>
-                                        <td data-label="ratings"><%=part.getRatings()%>
+                                        <td data-label="choice" align="center"><%=cpu.getPartsID()%>
                                         </td>
-                                        <td data-label="price"><%=part.getPrice()%>
+                                        <td data-label="partsName" align="center"><%=cpu.getPartsName()%>
                                         </td>
-                                        <td data-label="brand"><%=part.getBrand()%>
+                                        <td data-label="ratings" align="center"><%=cpu.getRatings()%>
                                         </td>
-                                        <td data-label="partsName"><%=part.getPartsName()%>
+                                        <td data-label="price" align="center"><%=cpu.getPrice()%>
                                         </td>
-                                        <td data-label="type"><%=part.getType()%>
+                                        <td data-label="brand" align="center"><%=cpu.getBrand()%>
                                         </td>
-                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=part.getPartsID() %>"></a></td>
+                                        <td data-label="Power Consumption" align="center"><%=cpu.getPower_consumption()%>
+                                        </td>
+                                        <td data-label="Compatible Socket" align="center"><%=cpu.getCompatible_socket()%>
+                                        </td>
+                                        <td data-label="Integrated Graphics" align="center"><%=cpu.getIntegrated_graphics()%>
+                                        </td>
+                                        <td><a class="ti-trash" href="DeleteServlet?id=<%=cpu.getPartsID() %>"></a></td>
                                         <td>
-                                            <a href="updatePrice.jsp?id=<%=part.getPartsID() %>">update Price</a>
+                                            <form method="post" action="InsertPartServlet">
+                                            </form>
                                         </td>
                                     </tr>
                                     <%
