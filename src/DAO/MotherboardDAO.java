@@ -71,4 +71,65 @@ public class MotherboardDAO {
 
         }
     }
+
+    public Motherboard getSpecialMotherboard(int partsID)
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "select * from Motherboard natural join Parts where partsID=?;";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1,partsID);
+            rs = stmt.executeQuery();
+            while(rs.next())
+            {
+                Motherboard part = new Motherboard();
+                part.setPartsID(rs.getInt("partsID"));
+                part.setRatings(rs.getDouble("ratings"));
+                part.setPrice(rs.getDouble("price"));
+                part.setBrand(rs.getString("brand"));
+                part.setPartsName(rs.getString("partsName"));
+                part.setType(rs.getString("type"));
+                part.setCompatible_socket(rs.getString("compatible_socket"));
+                part.setMotherboard_type(rs.getString("Motherboard_type"));
+                part.setNumber_of_m2(rs.getInt("number_of_m.2"));
+                part.setPCIe_version(rs.getString("PCIe_version"));
+                part.setNumber_of_PCIe_X1(rs.getInt("number_of_PCIe_X1"));
+                part.setUSB3_supported(rs.getString("USB3.0_supported"));
+
+                return part;
+            }
+            return null;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
+        finally {
+            if(rs != null){
+                try {
+                    rs.close();
+                    rs = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
 }

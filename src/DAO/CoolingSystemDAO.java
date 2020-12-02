@@ -69,4 +69,62 @@ public class CoolingSystemDAO {
 
         }
     }
+
+    public CoolingSystem getSpecialCoolingSystem(int partsID)
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "select * from CoolingSystem natural join Parts where partsID=?;";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1,partsID);
+            rs = stmt.executeQuery();
+            while(rs.next())
+            {
+                CoolingSystem part=new CoolingSystem();
+                part.setPartsID(rs.getInt("partsID"));
+                part.setRatings(rs.getDouble("ratings"));
+                part.setPrice(rs.getDouble("price"));
+                part.setBrand(rs.getString("brand"));
+                part.setPartsName(rs.getString("partsName"));
+                part.setType(rs.getString("type"));
+                part.setCompatible_socket(rs.getString("compatible_socket"));
+                part.setCooler_type(rs.getString("cooler_type"));
+                part.setRadiator_size(rs.getDouble("radiator_size"));
+                part.setRGB(rs.getString("RGB"));
+                return part;
+            }
+            return null;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
+        finally {
+            if(rs != null){
+                try {
+                    rs.close();
+                    rs = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
 }

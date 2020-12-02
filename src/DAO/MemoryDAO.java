@@ -67,4 +67,61 @@ public class MemoryDAO {
 
         }
     }
+
+    public Memory getSepcialMemory(int partsID)
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "select * from Memory natural join Parts where partsID=?;";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1,partsID);
+            rs = stmt.executeQuery();
+            while(rs.next())
+            {
+                Memory part = new Memory();
+                part.setPartsID(rs.getInt("partsID"));
+                part.setRatings(rs.getDouble("ratings"));
+                part.setPrice(rs.getDouble("price"));
+                part.setBrand(rs.getString("brand"));
+                part.setPartsName(rs.getString("partsName"));
+                part.setType(rs.getString("type"));
+                part.setModules(rs.getString("modules"));
+                part.setRAM_type(rs.getString("RAM_type"));
+                part.setPrice_per_GB(rs.getFloat("price_per_gb"));
+                return part;
+            }
+            return null;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
+        finally {
+            if(rs != null){
+                try {
+                    rs.close();
+                    rs = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
 }

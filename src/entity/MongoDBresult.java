@@ -20,14 +20,19 @@ public class MongoDBresult {
     private int Powersupply;
 
     public MongoDBresult(){
+        CPU = -1;
         GPU = -1;
         GPU2 = -1;
+        Memory = -1;
         Memory2 = -1;
+        Storage = -1;
         Storage2 = -1;
         Storage3 = -1;
         Storage4 = -1;
         Storage5 = -1;
         Storage6 = -1;
+        Coolingsystem = -1;
+        Powersupply = -1;
     }
 
     public String getId() {

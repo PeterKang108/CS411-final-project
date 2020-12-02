@@ -70,4 +70,64 @@ public class GPUDAO {
 
         }
     }
+
+    public GPU getSpecialGPU(int partsID)
+    {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try
+        {
+            conn = JDBChelp.getConnection();
+            String sql = "select * from GPU natural join Parts where partsID=?;";
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1,partsID);
+            rs = stmt.executeQuery();
+            while(rs.next())
+            {
+                GPU part = new GPU();
+                part.setPartsID(rs.getInt("partsID"));
+                part.setRatings(rs.getDouble("ratings"));
+                part.setPrice(rs.getDouble("price"));
+                part.setBrand(rs.getString("brand"));
+                part.setPartsName(rs.getString("partsName"));
+                part.setType(rs.getString("type"));
+                part.setChipset(rs.getString("chipset"));
+                part.setGPU_memory(rs.getInt("GPU_memory"));
+                part.setGPU_type(rs.getString("GPU_type"));
+                part.setInterface_type(rs.getString("interface_type"));
+                part.setPower_consumption(rs.getInt("power_consumption"));
+                part.setRGB(rs.getString("RGB"));
+                return part;
+            }
+            return null;
+        }
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
+        finally {
+            if(rs != null){
+                try {
+                    rs.close();
+                    rs = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+            if(stmt != null){
+                try {
+                    stmt.close();
+                    stmt = null;
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+        }
+    }
 }

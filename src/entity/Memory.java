@@ -9,6 +9,7 @@ public class Memory extends Parts{
 
     public void setPrice_per_GB(float price_per_GB) { Price_per_GB = price_per_GB; }
 
+
     public String getModules() {
         return modules;
     }

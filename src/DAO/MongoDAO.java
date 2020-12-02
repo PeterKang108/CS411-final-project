@@ -97,4 +97,18 @@ public class MongoDAO {
 
         return list;
     }
+
+    public int countUserhistory(String username){
+        MongoDatabase database = MangoDBhelp.getconn1();
+        MongoCollection<Document> collection = database.getCollection("userhistory");
+        FindIterable<Document> findIterable = collection.find(eq("user", username));
+        MongoCursor<Document> mongoCursor = findIterable.iterator();
+        int count = 0;
+        while(mongoCursor.hasNext()){
+            Document curr= mongoCursor.next();
+            count++;
+
+        }
+        return count;
+    }
 }
