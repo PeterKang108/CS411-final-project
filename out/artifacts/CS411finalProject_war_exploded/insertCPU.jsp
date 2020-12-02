@@ -130,45 +130,27 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="data-tables">
-                                <form>
-                                <table id="CPU" class="text-center">
-                                    <thead class="text-uppercase">
-                                    <tr>
-                                        <th scope="col">PartsID</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">type</th>
-                                        <th scope="col">ratings</th>
-                                        <th scope="col">price</th>
-                                        <th scope="col">brand</th>
-                                        <th scope="col">Power Consumption</th>
-                                        <th scope="col">Compatible Socket</th>
-                                        <th scope="col">Integrated Graphics</th>
-                                        <th scope="col">Delete</th>
-                                        <th scope="col">Insert</th>
-                                    </tr>
-                                    </thead>
+                                <form action="InsertPartServlet" method="post">
+                                        PartsID
+                                        <input type="text" name="PartsID"/><br>
+                                        ratings
+                                        <input type="text" name="ratings"/><br>
+                                        price
+                                        <input type="text" name="price"/><br>
+                                        brand
+                                        <input type="text" name="brand"/><br>
+                                        partsName
+                                        <input type="text" name="partsName"/><br>
+                                        type
+                                        <input type="text" name="type"/><br>
+                                        power_consumption
+                                        <input type="text" name="power_consumption"/><br>
+                                        compatible_socket
+                                        <input type="text" name="compatible_socket"/><br>
+                                        integrated_graphics
+                                        <input type="text" name="integrated_graphics"/><br>
 
-                                    <tbody>
-                                    <tr>
-
-                                        <input type="text" name="PartsID">
-
-                                        ratings：<input type="text" name="ratings">
-
-                                        price：<input type="text" name="price">
-
-                                        brand：<input type="text" name="brand">
-
-                                        partsName：<input type="text" name="partsName">
-
-                                        type：<input type="text" name="type">
-
-                                        <input type="submit" value="insert">
-
-                                    </tr>
-                                    </tbody>
-
-                                </table>
+                                        <input type="submit" value="insert"/>
                                 </form>
                             </div>
                         </div>

@@ -130,44 +130,36 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="data-tables">
-                                <table id="CPU" class="text-center">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">PartsID</th>
-                                        <th scope="col">partsName</th>
-                                        <th scope="col">ratings</th>
-                                        <th scope="col">price</th>
-                                        <th scope="col">brand</th>
-                                        <th scope="col">Cooler Type</th>
-                                        <th scope="col">Radiator Size</th>
-                                        <th scope="col">RGB</th>
-                                        <th scope="col">Compatible Socket</th>
-                                    </tr>
-                                    </thead>
+                                <form action="InsertPartServlet" method="post">
+                                    PartsID
+                                    <input type="text" name="PartsID"/><br>
+                                    ratings
+                                    <input type="text" name="ratings"/><br>
+                                    price
+                                    <input type="text" name="price"/><br>
+                                    brand
+                                    <input type="text" name="brand"/><br>
+                                    partsName
+                                    <input type="text" name="partsName"/><br>
+                                    type
+                                    <input type="text" name="type"/><br>
+                                    compatible_socket
+                                    <input type="text" name="compatible_socket"/><br>
+                                    PCIe_version
+                                    <input type="text" name="PCIe_version"/><br>
+                                    number_of_PCIe_X1
+                                    <input type="text" name="number_of_PCIe_X1"/><br>
+                                    RGB
+                                    <input type="text" name="RGB" placeholder="Yes or No"/><br>
+                                    USB3
+                                    <input type="text" name="USB3.0_supported"/><br>
+                                    number_of_m2
+                                    <input type="text" name="number_of_m2"/><br>
+                                    Motherboard_type
+                                    <input type="text" name="Motherboard_type"/><br>
+                                    <input type="submit" value="insert"/>
 
-                                    <tbody>
-                                    <%
-                                        CoolingSystemDAO daoCoolingSystem = new CoolingSystemDAO();
-                                        ArrayList<CoolingSystem> Coolers = daoCoolingSystem.getAllCoolingSystem();
-                                        for (CoolingSystem Cooler : Coolers) {
-                                    %>
-                                    <tr>
-                                        <td data-label="choice"><%=Cooler.getPartsID()%>
-                                        </td>
-                                        <td data-label="partsName"><%=Cooler.getPartsName()%></td>
-                                        <td data-label="ratings"><%=Cooler.getRatings()%></td>
-                                        <td data-label="price"><%=Cooler.getPrice()%></td>
-                                        <td data-label="brand"><%=Cooler.getBrand()%></td>
-                                        <td data-label="cooler type"><%=Cooler.getCooler_type()%></td>
-                                        <td data-label="Radiator Size"><%=Cooler.getRadiator_size()%></td>
-                                        <td data-label="RGB"><%=Cooler.getRGB()%></td>
-                                        <td data-label="Compatible Socket"><%=Cooler.getCompatible_socket()%></td>
-                                    </tr>
-                                    <%
-                                        }
-                                    %>
-                                    </tbody>
-                                </table>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -183,7 +175,7 @@
     <!-- footer area start-->
     <footer>
         <div class="footer-area">
-            <p><a href="${pageContext.request.contextPath}/insertCoolerSystem.jsp">insert</a><br></p>
+            <p><a href="${pageContext.request.contextPath}/insertnew.jsp">insert</a><br></p>
             <p><a href="${pageContext.request.contextPath}/index.jsp">back</a></p>
         </div>
     </footer>

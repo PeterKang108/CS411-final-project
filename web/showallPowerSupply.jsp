@@ -178,7 +178,7 @@
     <!-- footer area start-->
     <footer>
         <div class="footer-area">
-            <p><a href="${pageContext.request.contextPath}/insertnew.jsp">insert</a><br></p>
+            <p><a href="${pageContext.request.contextPath}/insertPowerSupply.jsp">insert</a><br></p>
             <p><a href="${pageContext.request.contextPath}/index.jsp">back</a></p>
         </div>
     </footer>
