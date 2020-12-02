@@ -283,8 +283,7 @@
 
             <td data-label="Add" align="center">
                 <form action="userhistory.jsp">
-                    <input type="button" onclick="<%daoHistory.insertDocument(recommend, username);%>" style="display: none">
-                    <input type="submit">
+                    <input type="submit" onclick="<%daoHistory.insertDocument(recommend, username);%>" value="Add">
                 </form>
             </td>
         </tbody>

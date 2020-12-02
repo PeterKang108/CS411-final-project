@@ -34,7 +34,7 @@
         <th scope="col">CPU</th>
         <th scope="col">GPU chipset</th>
         <th scope="col">Memory</th>
-        <th scope="col">Specifications</th>
+<%--        <th scope="col">Specifications</th>--%>
         <th scope="col">Add to History</th>
     </tr>
     </thead>
@@ -97,32 +97,32 @@
 <%--        <td data-label="Storage" align="center"><%=StorageCapacity%>--%>
 <%--        </td>--%>
 
-                <td data-label="show" align="center">
-                    <form action="userShowSpe.jsp" method="POST">
-                        <input type="hidden" name="iCPU" value="<%=h.getCPU()%>"/>
-                        <input type="hidden" name="iGPU" value="<%=h.getGPU()%>"/>
-                        <input type="hidden" name="iGPU2" value="<%=h.getGPU2()%>"/>
-                        <input type="hidden" name="iMB" value="<%=h.getMotherboard()%>"/>
-                        <input type="hidden" name="iCooler" value="<%=h.getCoolingsystem()%>"/>
-                        <input type="hidden" name="iMemory" value="<%=h.getMemory()%>"/>
-                        <input type="hidden" name="iMemory2" value="<%=h.getMemory2()%>"/>
-                        <input type="hidden" name="iStorage" value="<%=h.getStorage()%>"/>
-                        <input type="hidden" name="iStorage2" value="<%=h.getStorage2()%>"/>
-                        <input type="hidden" name="iStorage3" value="<%=h.getStorage3()%>"/>
-                        <input type="hidden" name="iStorage4" value="<%=h.getStorage4()%>"/>
-                        <input type="hidden" name="iStorage5" value="<%=h.getStorage5()%>"/>
-                        <input type="hidden" name="iStorage6" value="<%=h.getStorage6()%>"/>
-                        <input type="hidden" name="iCase" value="<%=h.getComputerCase()%>"/>
-                        <input type="hidden" name="iPS" value="<%=h.getPowersupply()%>"/>
-                        <input type="submit" value="Specifcations" />
-                    </form>
-                </td>
+<%--                <td data-label="show" align="center">--%>
+<%--                    <form action="userShowSpe.jsp" method="POST">--%>
+<%--                        <input type="hidden" name="iCPU" value="<%=h.getCPU()%>"/>--%>
+<%--                        <input type="hidden" name="iGPU" value="<%=h.getGPU()%>"/>--%>
+<%--                        <input type="hidden" name="iGPU2" value="<%=h.getGPU2()%>"/>--%>
+<%--                        <input type="hidden" name="iMB" value="<%=h.getMotherboard()%>"/>--%>
+<%--                        <input type="hidden" name="iCooler" value="<%=h.getCoolingsystem()%>"/>--%>
+<%--                        <input type="hidden" name="iMemory" value="<%=h.getMemory()%>"/>--%>
+<%--                        <input type="hidden" name="iMemory2" value="<%=h.getMemory2()%>"/>--%>
+<%--                        <input type="hidden" name="iStorage" value="<%=h.getStorage()%>"/>--%>
+<%--                        <input type="hidden" name="iStorage2" value="<%=h.getStorage2()%>"/>--%>
+<%--                        <input type="hidden" name="iStorage3" value="<%=h.getStorage3()%>"/>--%>
+<%--                        <input type="hidden" name="iStorage4" value="<%=h.getStorage4()%>"/>--%>
+<%--                        <input type="hidden" name="iStorage5" value="<%=h.getStorage5()%>"/>--%>
+<%--                        <input type="hidden" name="iStorage6" value="<%=h.getStorage6()%>"/>--%>
+<%--                        <input type="hidden" name="iCase" value="<%=h.getComputerCase()%>"/>--%>
+<%--                        <input type="hidden" name="iPS" value="<%=h.getPowersupply()%>"/>--%>
+<%--                        <input type="submit" value="Specifcations" />--%>
+<%--                    </form>--%>
+<%--                </td>--%>
 
 
         <td align="center">
 
-
-                <button onclick="<%
+            <form action="userhistory.jsp">
+                <input type="submit" onclick="<%
 
                 Map<String, String> toHistory = new HashMap<String, String>();
                 toHistory.put("CPU", Integer.toString(h.getCPU()));
@@ -141,7 +141,8 @@
                 toHistory.put("ComputerCase", Integer.toString(h.getComputerCase()));
                 toHistory.put("Powersupply", Integer.toString(h.getPowersupply()));
 
-                daoHistory.insertDocument(toHistory, username);%>">Insert</button>
+                daoHistory.insertDocument(toHistory, username);%>" value="Add All to History"/>
+            </form>
         </td>
 
 

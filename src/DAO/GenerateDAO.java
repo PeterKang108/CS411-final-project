@@ -327,7 +327,7 @@ public class GenerateDAO {
             flag = 0;
             sqlflag = 0;
             if(tempm2 == 0) {
-                sql=sql + " where inteface<>'M.2'";
+                sql=sql + " where interface<>'M.2'";
                 sqlflag=1;
             }
             if(advance.getStorage_brand() != null){
@@ -360,7 +360,7 @@ public class GenerateDAO {
             if(tempID == -1 && flag == 1){
                 sql = "select * from Storage natural join Parts";
                 if(tempm2 == 0) {
-                    sql=sql + " where inteface<>'M.2'";
+                    sql=sql + " where interface<>'M.2'";
                 }
                 sql = sql+";";
                 stmt = conn.prepareStatement(sql);
@@ -860,7 +860,7 @@ public class GenerateDAO {
             flag = 0;
             sqlflag = 0;
             if(tempm2 == 0) {
-                sql=sql + " where inteface<>'M.2'";
+                sql=sql + " where interface<>'M.2'";
                 sqlflag=1;
             }
             if(advance.getStorage_brand() != null){
@@ -893,7 +893,7 @@ public class GenerateDAO {
             if(tempID == -1 && flag == 1){
                 sql = "select * from Storage natural join Parts";
                 if(tempm2 == 0) {
-                    sql=sql + " where inteface<>'M.2'";
+                    sql=sql + " where interface<>'M.2'";
                 }
                 sql = sql+";";
                 stmt = conn.prepareStatement(sql);
@@ -1392,7 +1392,7 @@ public class GenerateDAO {
             flag = 0;
             sqlflag = 0;
             if(tempm2 == 0) {
-                sql=sql + " where inteface<>'M.2'";
+                sql=sql + " where interface<>'M.2'";
                 sqlflag=1;
             }
             if(advance.getStorage_brand() != null){
@@ -1425,7 +1425,7 @@ public class GenerateDAO {
             if(tempID == -1 && flag == 1){
                 sql = "select * from Storage natural join Parts";
                 if(tempm2 == 0) {
-                    sql=sql + " where inteface<>'M.2'";
+                    sql=sql + " where interface<>'M.2'";
                 }
                 sql = sql+";";
                 stmt = conn.prepareStatement(sql);
@@ -1933,7 +1933,7 @@ public class GenerateDAO {
             flag = 0;
             sqlflag = 0;
             if(tempm2 == 0) {
-                sql=sql + " where inteface<>'M.2'";
+                sql=sql + " where interface<>'M.2'";
                 sqlflag=1;
             }
             if(advance.getStorage_brand() != null){
@@ -1966,7 +1966,7 @@ public class GenerateDAO {
             if(tempID == -1 && flag == 1){
                 sql = "select * from Storage natural join Parts";
                 if(tempm2 == 0) {
-                    sql=sql + " where inteface<>'M.2'";
+                    sql=sql + " where interface<>'M.2'";
                 }
                 sql = sql+";";
                 stmt = conn.prepareStatement(sql);
@@ -2465,7 +2465,7 @@ public class GenerateDAO {
             flag = 0;
             sqlflag = 0;
             if(tempm2 == 0) {
-                sql=sql + " where inteface<>'M.2'";
+                sql=sql + " where interface<>'M.2'";
                 sqlflag=1;
             }
             if(advance.getStorage_brand() != null){
@@ -2498,7 +2498,7 @@ public class GenerateDAO {
             if(tempID == -1 && flag == 1){
                 sql = "select * from Storage natural join Parts";
                 if(tempm2 == 0) {
-                    sql=sql + " where inteface<>'M.2'";
+                    sql=sql + " where interface<>'M.2'";
                 }
                 sql = sql+";";
                 stmt = conn.prepareStatement(sql);

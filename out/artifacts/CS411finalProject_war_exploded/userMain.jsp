@@ -19,7 +19,7 @@
 <!-- Signup Form -->
 
 
-<form name="link_form" method="post" action="userRecom.jsp">
+<form name="link_form" method="post" action="userShowPCexamples.jsp">
     New to PC?
     <input type="submit" value="See some Recommendations">
 </form>
