@@ -415,7 +415,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < ComputerCaseID.size(); i++){
-                stmt.setInt(i+1, ComputerCaseID.get(i+1));
+                stmt.setInt(i+1, ComputerCaseID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
