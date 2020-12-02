@@ -73,8 +73,8 @@ public class UseraccountDAO {
         try
         {
             conn = JDBChelp.getConnection();
-            String sql = "insert into Useraccount(Username, Password)" +
-                    "values(?,?);";
+            String sql = "insert into Useraccount(Username, Password, Type)" +
+                    "values(?,?,'user');";
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, username);
             stmt.setString(2, password);
