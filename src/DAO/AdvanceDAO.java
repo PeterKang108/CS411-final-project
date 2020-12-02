@@ -199,7 +199,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < CPUID.size(); i++){
-                stmt.setInt(i+1, CPUID.get(i+1));
+                stmt.setInt(i+1, CPUID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -293,7 +293,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < GPUID.size(); i++){
-                stmt.setInt(i+1, GPUID.get(i+1));
+                stmt.setInt(i+1, GPUID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -318,7 +318,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY RGB;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < GPUID.size(); i++){
-                stmt.setInt(i+1, GPUID.get(i+1));
+                stmt.setInt(i+1, GPUID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -440,7 +440,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY RGB;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < ComputerCaseID.size(); i++){
-                stmt.setInt(i+1, ComputerCaseID.get(i+1));
+                stmt.setInt(i+1, ComputerCaseID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -469,7 +469,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY noise_proof;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < ComputerCaseID.size(); i++){
-                stmt.setInt(i+1, ComputerCaseID.get(i+1));
+                stmt.setInt(i+1, ComputerCaseID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -566,7 +566,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < CoolingSystemID.size(); i++){
-                stmt.setInt(i+1, CoolingSystemID.get(i+1));
+                stmt.setInt(i+1, CoolingSystemID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -591,7 +591,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY RGB;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < CoolingSystemID.size(); i++){
-                stmt.setInt(i+1, CoolingSystemID.get(i+1));
+                stmt.setInt(i+1, CoolingSystemID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -687,7 +687,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < MemoryID.size(); i++){
-                stmt.setInt(i+1, MemoryID.get(i+1));
+                stmt.setInt(i+1, MemoryID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -780,7 +780,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < MotherboardID.size(); i++){
-                stmt.setInt(i+1, MotherboardID.get(i+1));
+                stmt.setInt(i+1, MotherboardID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -805,7 +805,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY RGB;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < MotherboardID.size(); i++){
-                stmt.setInt(i+1, MotherboardID.get(i+1));
+                stmt.setInt(i+1, MotherboardID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -903,7 +903,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < PowersupplyID.size(); i++){
-                stmt.setInt(i+1, PowersupplyID.get(i+1));
+                stmt.setInt(i+1, PowersupplyID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
@@ -996,7 +996,7 @@ public class AdvanceDAO {
             sql = sql + "GROUP BY brand;";
             stmt = conn.prepareStatement(sql);
             for(int i = 0; i < StorageID.size(); i++){
-                stmt.setInt(i+1, StorageID.get(i+1));
+                stmt.setInt(i+1, StorageID.get(i));
             }
             rs = stmt.executeQuery();
             while(rs.next())
