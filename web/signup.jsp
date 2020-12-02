@@ -27,7 +27,7 @@
 </header>
 
 
-<form name="link_form" method="post" action="LoginServlet">
+<form name="link_form" method="post" action="SignupServlet">
     <input type="text" name="username" id="userId" placeholder="UserId" />
     <br>
     <input type="password" name="password" id="userPw" placeholder="Password" />
