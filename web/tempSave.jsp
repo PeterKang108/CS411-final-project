@@ -34,11 +34,14 @@
         if (request.getParameter("addMemory1") != null) {
             session.setAttribute("addMemory", request.getParameter("addMemory1"));
             session.setAttribute("addMemoryname", request.getParameter("addMemory1name"));
+            System.out.println("1");
         } else if (session.getAttribute("addMemory") != null) {
             position = 7;
+            System.out.println("2");
         } else {
             session.setAttribute("addMemory", request.getParameter("addMemory"));
             session.setAttribute("addMemoryname", request.getParameter("addMemoryname"));
+            System.out.println("3");
         }
     }
 

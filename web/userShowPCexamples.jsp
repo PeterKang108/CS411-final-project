@@ -58,7 +58,7 @@
         StorageDAO daoStorage = new StorageDAO();
         CoolingSystemDAO daoCooler = new CoolingSystemDAO();
         PowerSupplyDAO daoPS= new PowerSupplyDAO();
-        ArrayList<MongoDBresult> history = daoHistory.findUserDocuments("admin");
+        ArrayList<MongoDBresult> history = daoHistory.findUserDocuments("test1");
         for (MongoDBresult h : history) {
     %>
     <tr>

@@ -4,11 +4,18 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class JDBChelp {
-    //Peter session info:
+
+        //Peter remote session info:
     private static final String driver = "com.mysql.jdbc.Driver";
-    private static final String url = "jdbc:mysql://localhost:3306/ComputerParts?serverTimezone=UTC";
+    private static final String url = "jdbc:mysql://144.202.126.66:3306/ComputerParts";
     private static final String username = "root";
-    private static final String password = "123456";
+    private static final String password = "peteradmin";
+
+//    //Peter session info:
+//    private static final String driver = "com.mysql.jdbc.Driver";
+//    private static final String url = "jdbc:mysql://localhost:3306/ComputerParts?serverTimezone=UTC";
+//    private static final String username = "root";
+//    private static final String password = "123456";
 
 //    //Youcheng session info:
 //    private static final String driver = "com.mysql.jdbc.Driver";
@@ -41,6 +48,7 @@ public class JDBChelp {
         if(conn == null)
         {
             conn = DriverManager.getConnection(url, username, password);
+            conn.setAutoCommit(true);
             return conn;
 
         }

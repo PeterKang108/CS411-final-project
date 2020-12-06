@@ -57,7 +57,12 @@
             request.setAttribute("reco", null);
         }
         MongoDAO daoHistory = new MongoDAO();
-//        Map<String, String> recommend = new HashMap<String, String>();
+
+        if (request.getParameter("recordSaved") != null) {
+            if (request.getParameter("recordSaved").equals("1")) {
+                daoHistory.insertDocument((Map<String, String>) session.getAttribute("recommendRecord"), username);
+            }
+        }
         int recoCPU = -1;
         int recoGPU = -1;
         int recoGPU2 = -1;
@@ -283,7 +288,11 @@
 
             <td data-label="Add" align="center">
                 <form action="userhistory.jsp">
-                    <input type="submit" onclick="<%daoHistory.insertDocument(recommend, username);%>" value="Add">
+                    <input type="hidden" value="1" name="recordSaved">
+                    <%
+                        session.setAttribute("recommendRecord", recommend);
+                    %>
+                    <input type="submit" value="Add">
                 </form>
             </td>
         </tbody>

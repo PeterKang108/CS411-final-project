@@ -26,10 +26,12 @@
     int addedCPU = -1;
     if (session.getAttribute("addCPU") != null) {
         addedCPU = Integer.parseInt((String)session.getAttribute("addCPU"));
+        session.setAttribute("addCPU", null);
     }
     String addedCPUname = "";
     if (addedCPU > 100) {
         addedCPUname = (String) session.getAttribute("addCPUname");
+        session.setAttribute("addCPUname", null);
     }
 
 
@@ -37,10 +39,12 @@
     int addedMB = -1;
     if (session.getAttribute("addMB") != null) {
         addedMB = Integer.parseInt((String)session.getAttribute("addMB"));
+        session.setAttribute("addMB", null);
     }
     String addedMBname = "";
     if (addedMB > 100) {
         addedMBname = (String) session.getAttribute("addMBname");
+        session.setAttribute("addMBname", null);
     }
 //    String addedMBsocket = "";
 //    if (addedMB > 100) {
@@ -51,130 +55,156 @@
     int addedCooler = -1;
     if (session.getAttribute("addCooler") != null) {
         addedCooler = Integer.parseInt((String)session.getAttribute("addCooler"));
+        session.setAttribute("addCooler", null);
     }
     String addedCoolername = "";
     if (addedCooler > 100) {
         addedCoolername = (String) session.getAttribute("addCoolername");
+        session.setAttribute("addCoolername", null);
     }
 
     //Memory
     int addedMemory = -1;
     if (session.getAttribute("addMemory") != null) {
         addedMemory = Integer.parseInt((String)session.getAttribute("addMemory"));
+        session.setAttribute("addMemory", null);
     }
     String addedMemoryname = "";
     if (addedMemory > 100) {
         addedMemoryname = (String) session.getAttribute("addMemoryname");
+        session.setAttribute("addMemoryname", null);
     }
 
     //Memory2
     int addedMemory2 = -1;
     if (session.getAttribute("addMemory2") != null) {
         addedMemory2 = Integer.parseInt((String)session.getAttribute("addMemory2"));
+        session.setAttribute("addMemory2", null);
     }
     String addedMemory2name = "";
     if (addedMemory2 > 100) {
         addedMemory2name = (String) session.getAttribute("addMemory2name");
+        session.setAttribute("addMemory2name", null);
     }
 
     //Storage
     int addedStorage = -1;
     if (session.getAttribute("addStorage") != null) {
         addedStorage = Integer.parseInt((String)session.getAttribute("addStorage"));
+        session.setAttribute("addStorage", null);
     }
     String addedStoragename = "";
     if (addedStorage > 100) {
         addedStoragename = (String) session.getAttribute("addStoragename");
+        session.setAttribute("addStoragename", null);
     }
 
     //Storage2
     int addedStorage2 = -1;
     if (session.getAttribute("addStorage2") != null) {
         addedStorage2 = Integer.parseInt((String)session.getAttribute("addStorage2"));
+        session.setAttribute("addStorage2", null);
     }
     String addedStorage2name = "";
     if (addedStorage2 > 100) {
         addedStorage2name = (String) session.getAttribute("addStorage2name");
+        session.setAttribute("addStorage2name", null);
     }
 
     //Storage3
     int addedStorage3 = -1;
     if (session.getAttribute("addStorage3") != null) {
         addedStorage3 = Integer.parseInt((String)session.getAttribute("addStorage3"));
+        session.setAttribute("addStorage3", null);
     }
     String addedStorage3name = "";
     if (addedStorage3 > 100) {
         addedStorage3name = (String) session.getAttribute("addStorage3name");
+        session.setAttribute("addStorage3name", null);
     }
 
     //Storage4
     int addedStorage4 = -1;
     if (session.getAttribute("addStorage4") != null) {
         addedStorage4 = Integer.parseInt((String)session.getAttribute("addStorage4"));
+        session.setAttribute("addStorage4", null);
     }
     String addedStorage4name = "";
     if (addedStorage4 > 100) {
         addedStorage4name = (String) session.getAttribute("addStorage4name");
+        session.setAttribute("addStorage4name", null);
     }
 
     //Storage5
     int addedStorage5 = -1;
     if (session.getAttribute("addStorage5") != null) {
         addedStorage5 = Integer.parseInt((String)session.getAttribute("addStorage5"));
+        session.setAttribute("addStorage5", null);
     }
     String addedStorage5name = "";
     if (addedStorage5 > 100) {
         addedStorage5name = (String) session.getAttribute("addStorage5name");
+        session.setAttribute("addStorage5name", null);
     }
 
     //Storage6
     int addedStorage6 = -1;
     if (session.getAttribute("addStorage6") != null) {
         addedStorage6 = Integer.parseInt((String)session.getAttribute("addStorage6"));
+        session.setAttribute("addStorage6", null);
     }
     String addedStorage6name = "";
     if (addedStorage6 > 100) {
         addedStorage6name = (String) session.getAttribute("addStorage6name");
+        session.setAttribute("addStorage6name", null);
     }
 
     //Case
     int addedCase = -1;
     if (session.getAttribute("addCase") != null) {
         addedCase = Integer.parseInt((String)session.getAttribute("addCase"));
+        session.setAttribute("addCase", null);
     }
     String addedCasename = "";
     if (addedCase > 100) {
         addedCasename = (String) session.getAttribute("addCasename");
+        session.setAttribute("addCasename", null);
     }
 
     //GPU
     int addedGPU = -1;
     if (session.getAttribute("addGPU") != null) {
         addedGPU = Integer.parseInt((String)session.getAttribute("addGPU"));
+        session.setAttribute("addGPU", null);
     }
     String addedGPUname = "";
     if (addedGPU > 100) {
         addedGPUname = (String) session.getAttribute("addGPUname");
+        session.setAttribute("addGPUname", null);
     }
 
     //GPU2
     int addedGPU2 = -1;
     if (session.getAttribute("addGPU2") != null) {
         addedGPU2 = Integer.parseInt((String)session.getAttribute("addGPU2"));
+        session.setAttribute("addGPU2", null);
     }
     String addedGPU2name = "";
     if (addedGPU2 > 100) {
         addedGPU2name = (String) session.getAttribute("addGPU2name");
+        session.setAttribute("addGPU2name", null);
     }
 
     //Power Supply
     int addedPS = -1;
     if (session.getAttribute("addPS") != null) {
         addedPS = Integer.parseInt((String)session.getAttribute("addPS"));
+        session.setAttribute("addPS", null);
     }
     String addedPSname = "";
     if (addedPS > 100) {
         addedPSname = (String) session.getAttribute("addPSname");
+        session.setAttribute("addPSname", null);
     }
 %>
 
