@@ -36,12 +36,18 @@
             session.setAttribute("addMemoryname", request.getParameter("addMemory1name"));
             System.out.println("1");
         } else if (session.getAttribute("addMemory") != null) {
-            position = 7;
-            System.out.println("2");
+            if (!session.getAttribute("addMemory").equals("-1")) {
+                position = 7;
+                System.out.println("2");
+            } else {
+                session.setAttribute("addMemory", request.getParameter("addMemory"));
+                session.setAttribute("addMemoryname", request.getParameter("addMemoryname"));
+                System.out.println("3");
+            }
         } else {
             session.setAttribute("addMemory", request.getParameter("addMemory"));
             session.setAttribute("addMemoryname", request.getParameter("addMemoryname"));
-            System.out.println("3");
+            System.out.println("4");
         }
     }
 
@@ -60,7 +66,12 @@
             session.setAttribute("addStorage", request.getParameter("addStorage1"));
             session.setAttribute("addStoragename", request.getParameter("addStorage1name"));
         } else if (session.getAttribute("addStorage") != null) {
-            position = 9;
+            if (!session.getAttribute("addStorage").equals("-1")) {
+                position = 9;
+            } else {
+                session.setAttribute("addStorage", request.getParameter("addStorage"));
+                session.setAttribute("addStoragename", request.getParameter("addStoragename"));
+            }
         } else {
             session.setAttribute("addStorage", request.getParameter("addStorage"));
             session.setAttribute("addStoragename", request.getParameter("addStoragename"));
@@ -72,7 +83,12 @@
             session.setAttribute("addStorage2", request.getParameter("addStorage2"));
             session.setAttribute("addStorage2name", request.getParameter("addStorage2name"));
         } else if (session.getAttribute("addStorage2") != null) {
-            position = 10;
+            if (!session.getAttribute("addStorage2").equals("-1")) {
+                position = 10;
+            } else {
+                session.setAttribute("addStorage2", request.getParameter("addStorage"));
+                session.setAttribute("addStorage2name", request.getParameter("addStoragename"));
+            }
         } else {
             session.setAttribute("addStorage2", request.getParameter("addStorage"));
             session.setAttribute("addStorage2name", request.getParameter("addStoragename"));
@@ -84,7 +100,12 @@
             session.setAttribute("addStorage3", request.getParameter("addStorage3"));
             session.setAttribute("addStorage3name", request.getParameter("addStorage3name"));
         } else if (session.getAttribute("addStorage3") != null) {
-            position = 11;
+            if (!session.getAttribute("addStorage3").equals("-1")) {
+                position = 11;
+            } else {
+                session.setAttribute("addStorage3", request.getParameter("addStorage"));
+                session.setAttribute("addStorage3name", request.getParameter("addStoragename"));
+            }
         } else {
             session.setAttribute("addStorage3", request.getParameter("addStorage"));
             session.setAttribute("addStorage3name", request.getParameter("addStoragename"));
@@ -96,7 +117,12 @@
             session.setAttribute("addStorage4", request.getParameter("addStorage4"));
             session.setAttribute("addStorage4name", request.getParameter("addStorage4name"));
         } else if (session.getAttribute("addStorage4") != null) {
-            position = 12;
+            if (!session.getAttribute("addStorage4").equals("-1")) {
+                position = 12;
+            } else {
+                session.setAttribute("addStorage4", request.getParameter("addStorage"));
+                session.setAttribute("addStorage4name", request.getParameter("addStoragename"));
+            }
         } else {
             session.setAttribute("addStorage4", request.getParameter("addStorage"));
             session.setAttribute("addStorage4name", request.getParameter("addStoragename"));
@@ -108,7 +134,12 @@
             session.setAttribute("addStorage5", request.getParameter("addStorage5"));
             session.setAttribute("addStorage5name", request.getParameter("addStorage5name"));
         } else if (session.getAttribute("addStorage5") != null) {
-            position = 13;
+            if (!session.getAttribute("addStorage5").equals("-1")) {
+                position = 13;
+            } else {
+                session.setAttribute("addStorage5", request.getParameter("addStorage"));
+                session.setAttribute("addStorage5name", request.getParameter("addStoragename"));
+            }
         } else {
             session.setAttribute("addStorage5", request.getParameter("addStorage"));
             session.setAttribute("addStorage5name", request.getParameter("addStoragename"));
@@ -130,7 +161,12 @@
             session.setAttribute("addGPU", request.getParameter("addGPU1"));
             session.setAttribute("addGPUname", request.getParameter("addGPU1name"));
         } else if (session.getAttribute("addGPU") != null) {
-            position = 3;
+            if (!session.getAttribute("addGPU").equals("-1")) {
+                position = 3;
+            } else {
+                session.setAttribute("addGPU", request.getParameter("addGPU"));
+                session.setAttribute("addGPUname", request.getParameter("addGPUname"));
+            }
         } else {
             session.setAttribute("addGPU", request.getParameter("addGPU"));
             session.setAttribute("addGPUname", request.getParameter("addGPUname"));

@@ -42,6 +42,103 @@
     </thead>
     <tbody>
     <%
+
+        //CPU
+        if (session.getAttribute("addCPU") != null) {
+            session.setAttribute("addCPU", null);
+            session.setAttribute("addCPUname", null);
+        }
+
+
+        //MB
+        if (session.getAttribute("addMB") != null) {
+            session.setAttribute("addMB", null);
+            session.setAttribute("addMBname", null);
+        }
+//    String addedMBsocket = "";
+//    if (addedMB > 100) {
+//        addedMBsocket = (String) session.getAttribute("addMBsocket");
+//    }
+
+        //Cooler
+        if (session.getAttribute("addCooler") != null) {
+            session.setAttribute("addCooler", null);
+            session.setAttribute("addCoolername", null);
+        }
+
+        //Memory
+        int addedMemory = -1;
+        if (session.getAttribute("addMemory") != null) {
+            session.setAttribute("addMemory", null);
+            session.setAttribute("addMemoryname", null);
+        }
+
+        //Memory2
+        if (session.getAttribute("addMemory2") != null) {
+            session.setAttribute("addMemory2", null);
+            session.setAttribute("addMemory2name", null);
+        }
+
+        //Storage
+        if (session.getAttribute("addStorage") != null) {
+            session.setAttribute("addStorage", null);
+            session.setAttribute("addStoragename", null);
+        }
+
+        //Storage2
+        if (session.getAttribute("addStorage2") != null) {
+            session.setAttribute("addStorage2", null);
+            session.setAttribute("addStorage2name", null);
+        }
+
+        //Storage3
+        if (session.getAttribute("addStorage3") != null) {
+            session.setAttribute("addStorage3", null);
+            session.setAttribute("addStorage3name", null);
+        }
+
+        //Storage4
+        if (session.getAttribute("addStorage4") != null) {
+            session.setAttribute("addStorage4", null);
+            session.setAttribute("addStorage4name", null);
+        }
+
+        //Storage5
+        if (session.getAttribute("addStorage5") != null) {
+            session.setAttribute("addStorage5", null);
+            session.setAttribute("addStorage5name", null);
+        }
+
+        //Storage6
+        if (session.getAttribute("addStorage6") != null) {
+            session.setAttribute("addStorage6", null);
+            session.setAttribute("addStorage6name", null);
+        }
+
+        //Case
+        if (session.getAttribute("addCase") != null) {
+            session.setAttribute("addCase", null);
+            session.setAttribute("addCasename", null);
+        }
+
+        //GPU
+        if (session.getAttribute("addGPU") != null) {
+            session.setAttribute("addGPU", null);
+            session.setAttribute("addGPUname", null);
+        }
+
+        //GPU2
+        if (session.getAttribute("addGPU2") != null) {
+            session.setAttribute("addGPU2", null);
+            session.setAttribute("addGPU2name", null);
+        }
+
+        //Power Supply
+        if (session.getAttribute("addPS") != null) {
+            session.setAttribute("addPS", null);
+            session.setAttribute("addPSname", null);
+        }
+
         String username = (String) session.getAttribute("username");
         session.setAttribute("username", username);
         int reco = 0;
